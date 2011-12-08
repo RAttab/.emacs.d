@@ -1,1 +1,4 @@
 *~
+*.elc
+*-compile-script
+*-make-script
