@@ -1,0 +1,381 @@
+
+# Emacs Cheat-Sheet
+  
+* Emacs								       :note:
+** Emacs Help
+*** C-h m -> Mode information
+*** C-h b -> List all binded keys
+*** C-h a -> Help by topic
+*** C-h k -> What a key does
+*** C-h v [var] -> dump content and help for a variable
+*** C-h i -> Info browser
+**** C-u C-h i -> Open arbitrary info file.
+**** l -> history-back
+**** r -> history forward
+*** M-x set-variable -> Sets a variable.
+** General
+*** M-X load-file RET ~/.emacs -> Quick config refresh (not equivalent to a reboot).
+*** M-</> -> start/end buffer
+*** M-g g -> goto-line
+*** M-g n/p -> next/prev error
+*** C-x C-t -> transpose-line
+**** M-t -> transpose-word
+*** C-x C-o -> delete-blank-lines
+*** C-x i -> insert-file
+*** C-x 4 f -> find-file-other-window
+*** C-x 4 c -> clone-buffer
+*** C-x 4 0 -> kill-buffer-and-window
+*** C-u C-x C-x -> Jump to mark.
+*** C-x (/) -> start/stop macro recording
+*** C-x e -> execute macro (can be prefixed
+*** M-l/u -> down/upcase-word
+*** M-c -> capitalize-word
+*** C-x C-l/u -> down/upcase-region
+*** Spell Check
+**** M-x flyspell-mode -> highlighter
+**** M-x flyspell-prog-mode -> comments and string only
+**** M-x ispell -> entire buffer
+**** M-$ ispell-word
+*** C-s ->Search
+**** C-w -> append word at cursor to search term
+**** C-y -> append line at cursor to search term
+**** M-n/p -> next-prev search terms
+**** M-r -> regular-expression toggle
+**** M-c -> toggle case-sensitivity
+**** M-s o -> switch to occur mode
+** Dired-mode
+*** ^ -> up one level
+*** x -> delete marks
+*** g -> revert-buffer
+*** R -> rename
+*** M -> chmod
+*** O -> chown
+*** o -> open in new window
+*** * % -> mark files regexp
+*** i -> Open folder in same buffer.
+*** ! -> do shell command.
+*** & -> async shell command.
+*** $ -> Toggle visibility of dir.
+*** + -> Create dir
+*** u/U -> Clear [ALL] marks
+*** = -> diff
+** Buffer List
+*** d -> delete
+*** s -> save
+*** x -> Save marks
+*** ? -> help
+*** q -> quit       
+** Frames
+*** C-x 5 2 -> Create new frame
+*** C-x 5 0/1 -> Delete this frame/all other frames
+*** C-x 5 o -> Switch frame
+*** C-x 5 b/f/d name -> switch to buffer/file/dir in another frame (opens a new frame
+** Registers
+*** C-x r <spc> R -> save position
+*** C-x r j R -> goto position
+*** C-x r s R -> Copy region into register
+*** C-x r i R -> Insert text from register
+*** Bookmarks
+**** C-x r m -> Remember
+**** C-x r b -> Jump to
+**** C-x r l -> List bookmarks
+***** C-o -> open bookmark in new window
+***** r -> Rename
+***** d -> mark for deletion
+**** M-x bookmark-delete
+** ido-mode
+*** C-f -> Switch to normal open file
+*** C-d -> Dired for directory
+*** C-j -> Create new file.
+** Python
+*** C-c C-z -> switch-to-python
+*** send
+**** C-c C-r -> send-region
+**** C-c C-s -> send-string
+**** C-c C-c -> send-buffer
+*** C-c C-f -> describe-symbol
+*** C-c TAB -> find-imports
+*** C-c C-u -> start-of-block
+*** C-c </> -> shift
+** CEDET
+*** Senator
+**** C-c , n/p -> next/previous tag
+**** C-c , g -> symref
+**** C-c , TAB -> auto-complete
+**** C-c , -/+ -> fold/unfold tag
+**** C-c j -> jump to ref
+*** Charts
+**** semantic-chart-tags-by-class
+**** semantic-chart-database-size
+**** semantic-chart-tag-complexity
+** org-mode
+*** C-c C-c -> Multi-purposed action key used everywhere.
+*** Tasks
+**** C-c c -> Capture tasks
+**** C-c C-t KEY -> Switches the state of a task.
+**** C-c C-o -> Open hyperlink
+**** C-c C-q -> Edit tags
+**** C-c C-w -> Refile
+*** Outline
+**** S-<left>/<right> -> TODO status switch
+**** S-<up>/<down> -> Priority switch
+**** M-S-right -> Promote subtree
+**** C-c C-x C/M-w -> Kill/yank subtree
+**** C-c C-x C-y -> paste (possibly C-y)
+**** C-x n s -> Narrow to subtree
+**** C-x n b -> Narrow to block
+**** C-x n w -> Widden
+*** Tables
+**** C-c | -> create/convert table.
+**** C-c - -> insert horizontal line.
+**** C-c ^ -> sort by the column.
+**** C-c + -> sum column
+*** C-c a -> Agenda
+**** F -> follow mode
+**** L -> recenter
+**** A -> Select another view
+**** v d/w/m/y -> view day/week/month/year
+**** v [ -> view inactive timestamps (?)
+**** f/b -> go forward/backwards in time
+**** . -> go to today.
+**** j -> go to date
+**** s -> save all org mode buffers
+**** / -> filter by tags
+**** t/: -> change todo/tag
+**** k -> action on item.
+**** C-k -> delete entry + subtree
+**** C-c C-x C-a -> archives tree (a also works).
+**** C-c C-o -> follow link
+**** C-c C-d -> set deadline.
+**** C-x C-w -> export to file.
+*** Special macro things
+**** #+BEGIN_SRC type --- #+END_SRC 
+**** #+ARCHIVED -> Removes a tree from the agenda stuff.
+** Calc
+*** Global
+**** U -> undo
+**** D -> redo
+**** w -> why the last calc failed.
+**** M-0 -> resets calc
+**** M-<enter> -> push poped arg back to stack
+**** M-- M-<num> <del> -> delete stack entry <num>
+*** Outside
+**** C-x * c -> Open calc
+**** C-x * b -> toggle fullscreen mode
+**** C-x * q -> quick calc (algebraic). Result is in kill ring.
+**** C-x * e -> embdable calc (use calc from random buffer).
+**** C-x * g -> Grab numbers from buffer into calc
+**** C-u C-x * g -> Grab as a single number/expression
+**** C-x * r -> Grab as matrix
+**** C-x * y -> yank top of stack
+*** RPN
+**** ` -> edit stack entry at top
+**** x -> Manually enter a function (equiv: M-x calc-)
+**** <tab> -> swap top of stack.
+**** d t -> move head to point.
+**** d ]/[ -> truncate down/up.
+**** Math
+***** n -> change sign
+***** & -> reciprocal (1/x)
+***** Q -> Square root
+***** S/C/T -> sine/cos/tan
+***** E/L/B -> e^x, ln, log10
+***** I/H -> Inverse/hyperbolic
+***** A -> absolute value
+***** f x/n -> max/min
+***** P -> pi
+***** F -> to int floor
+***** R -> to int round
+***** c F -> to fraction
+***** c f -> to float
+*** Algebraic
+**** ' something -> Algebraic prefix input.
+**** = -> Evaluate expression.
+**** => -> Add at the end of an exp to have it update automagically
+**** $/$$/$$$/... -> ith previous result.
+**** [exp1, exp2] -> vector of equations
+**** Math
+***** a . -> extract right-hand side
+***** a =/</>... -> relational operator
+***** [H] a S <var-list> -> solve equation for variable x,y (H gives all solutions).
+***** a P -> like H a S but returns a vector of solutions
+***** a d <var> -> derive with respect to variable x
+***** a i <var> -> integrate over var
+***** a I -> numerical integration
+***** a x/s -> expand/simplify
+***** a n -> combine common denominators
+***** a c <var> -> collect var x
+***** a t x=1 -> taylor expansion
+***** a r <pattern> := <rewrite> :: <condition>
+****** EvalRules -> Stored patterns will be applied automatically.
+*** Calc modes
+**** m d/r -> deg/radians mode
+***** c d/r -> change number from rad/deg
+**** m f -> fraction mode
+***** : -> fraction separator.
+**** m i -> Infinit mode
+**** m s -> symbolic mode (leaves sqrt(5) as is)
+*** Display modes (d)
+**** p -> Change calc precision
+**** d C -> view as C eq
+**** d B -> view as symbolic eq (that's just a silly level of awesome).
+**** d N -> view as normal
+**** d g -> toggle group digits
+**** d r <radix> -> switch to whatever.
+***** <radix>#<num> -> base entry.
+*** Plot
+**** g f -> plot x, y vector pair on stack
+**** g a -> edit plotting command
+*** Trail (t)
+**** t d -> show trail
+**** t ] -> reset trail pointer
+**** t p -> move trail pointer
+**** t n/p -> next/prev trail pointer.
+**** t y -> yank trail pointer
+**** t r -> trail search reverse
+**** t . -> sumarize vectors (destructive)
+*** Store Recall (s)
+**** s s/t -> store/pop top of stack in var
+**** s <num> -> store top of stack in q<num>
+**** s r -> recall var name
+**** s u -> unstore
+**** s l <var> -> let var have value top of stack (temporary)
+**** s e -> edit variable
+*** Binary (b)
+**** d 2/8/6 -> bin/octal/hex mode
+**** d z -> leading zeros
+**** d c -> clip to word
+**** b w -> set word size (negative for 2's complement representation).
+**** b n/a/o/x/d -> not/and/or/xor/diff
+**** [H] b l/r -> left/right shift by one (H -> take n from stack).
+**** b t -> rotate
+**** b p/u -> pack/unpack into/from vector index form.
+**** b u V # -> pop(x)
+**** b u 63 <tab> - b p -> reverse(x) 
+*** Vectors
+**** v . -> summarize vector mode
+**** A -> Length of vector (as in pythagorean length)
+**** v t -> transpose
+**** v i -> idendity
+**** & -> inverse
+**** | -> concat
+**** v u -> unpack vector
+**** M-N v p -> pack last N stack heads.
+**** v l -> dimension of the vector
+**** v x <num> -> build seq vector (eg. [1 2 3 4 5])
+**** v b <num> -> rep num times into a vec (eg. [1 1 1 1 1])
+**** v R *+-... -> Reduce
+**** v M <op> -> apply op to all ele
+**** v U <op> -> accumulate
+**** v v -> reverse vector
+**** v S -> sort
+**** v r/c -> extract row/col (negative num deletes the row/col).
+*** Combinatronics & Num Theory (k)
+**** ! -> factorial
+**** k c -> binomial coefficient (n! /(m!(n-m)!))
+**** k f -> factorize
+**** [I] k n -> [prev] next prime.
+*** Programming
+**** Z F <fct-letter> - Define a new function
+**** z <fct-letter> - Apply function
+**** S-<fct-letter> - Same as above
+*** Misc stuff
+**** t N -> Now date
+**** t I -> increment month
+**** u c <unit> -> convert to unit
+**** u s -> unit simplify
+**** u v -> list of all units
+** Picture Mode
+*** C-c C-c -> Exit picture mode and revert to previous mode.
+*** C-o -> new line (add M to split).
+*** C-j -> duplicate line
+*** C-<arrow> -> insert direction
+*** C-' -> up-right
+*** C-` -> up-left
+*** C-\ -> down-right
+*** C-/ -> down-left
+** TODO Make a findsrc equivalent in emacs			       :task:
+ - State "TODO"       from ""           <2012-01-16 Mon 10:25>
+
+ I believe Icicle and Everything are 2 candidates but it kinda going overboard
+
+* git								       :note:
+** Commit names
+*** master@{yesterday} -> where branch was at specified date
+*** master@{5} -> Nth previous value of a pointer.
+*** master^2 -> Nth parent (useful for merge commit that have more then one parent)
+*** master~2 -> Nth grandparent == master^^
+*** master^{tree} -> the tree that a commit points to
+*** master:/path/to/file -> the blob for a commit.
+** log
+*** log 01234 -> All commits reachable by 01234
+*** log 01234.. -> all commits not reachable by 01234
+*** log 01234..abcde -> all commits reachable by abcde but not by 01234
+*** log 01234...abcde -> commits reachable by one but not both commits.
+** diff
+*** diff 01234..abcde -> diff of the tips of the 2 branches
+*** diff 01234...abcde -> diff of all but common ancestor
+*** diff --cached -> diff of index (staged for commit).
+*** diff HEAD -> diff of working directory (in folders).
+*** diff HEAD -- ./lib -> same as above but limitted to the lib path.
+** pull
+*** fetch remote_name -> gets commits and stores them in remote_name/branch_name.
+*** merge remote_name/branch_name -> completes the pull
+** stash
+*** stash save "msg"
+*** stash list
+*** stash apply name
+** Misc
+*** reflog -> reference log of all the commit. Use with reset.
+*** submodule update --init -> RS: use after every pull.
+** AMEND
+*** Rebase - Non-destructive I think
+    $ git rebase bbc643cd --interactive
+    $ git add <filepattern>
+    $ git commit --amend
+    $ git rebase --continue
+
+*** Reset 
+    The idea is that after you reset the commits will be orphaned into their own branch.
+    This means that they can be found (reflog) and merged back into the current branch.
+
+    $ git reset --hard <commit>
+    $ git add <...>
+    $ git commit --amend
+    $ git reflog
+    $ git merge <commi-from-reflog>
+
+* gdb								       :note:
+** Breaking
+*** catch throw -> Stop on throw (see help for the rest of the avail events).
+*** clear [loc] -> removes bp at loc (default: all).
+*** delete breaknum -> deletes bp by number (see info break)
+*** info signals -> dump signal handlers
+*** handle SIGSEGV stop/nostop/print/noprint -> changes the handler for the signal
+** Stepping
+*** c -> Continue
+*** s [count] -> Step into count times.
+**** si -> Step into instruction
+*** n [count] -> Step over count times.
+**** ni -> Step over instruction
+*** fin -> Step until return.
+*** u -> Step out of loop.
+*** advance loc -> Step until loc
+** Running
+*** set args [args] -> Set arguments for next run (empty for no args).
+** Examine
+*** p var -> print var content
+*** dump/append binary/ihex memory <filename> <start_addr> <end_addr>
+** Logging
+*** set logging file FILE
+*** set logging [on|off]
+** Emacs
+*** gdb-restore-windows -> Restore the default multi-window thingy
+* Terminator							       :note:
+** Ctrl+Shift+X -> toggle maximize current terminal
+** Ctrl+Shift+T -> New tab
+** Ctrl+PgDn/PgUp -> switch tabs
+** Ctrl+ +/- -> Font size
+** Ctrl+0 -> Default font size (not the numpad).
+   
+

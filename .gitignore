@@ -2,3 +2,7 @@
 *.elc
 *-compile-script
 *-make-script
+vendor/cedet
+vendor/cedet-1.0.1
+vendor/org
+vendor/org-7.8.08
