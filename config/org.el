@@ -11,7 +11,7 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; Controls where the agenda will look for it's files. A directory means that all 
-(setq org-agenda-files '("~/emacs-config" "~/code" "~/org"))
+(setq org-agenda-files '("~/.emacs.d" "~/code" "~/org"))
 
 (setq org-startup-indented t) ;space indented lists (no stars) - emacs 23.2 & +
 (setq org-hide-leading-stars t) ; emacs 23.2 & -
