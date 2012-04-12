@@ -31,6 +31,7 @@
 *** M-l/u -> down/upcase-word
 *** M-c -> capitalize-word
 *** C-x C-l/u -> down/upcase-region
+*** C-M-right/left -> forward/backward-sexp (may conflict with OS keys).
 *** Spell Check
 **** M-x flyspell-mode -> highlighter
 **** M-x flyspell-prog-mode -> comments and string only

@@ -48,21 +48,21 @@
 
 
 ;; Capture
-(setq org-deault-notes-file (expand-file-name "~/code/refile.org"))
+(setq org-deault-notes-file (expand-file-name "~/org/refile.org"))
 (global-set-key "\C-cc" 'org-capture)
 
 (setq org-capture-templates
-      '(("t" "Task" entry (file+headline "~/code/refile.org" "Refile")
+      '(("t" "Task" entry (file+headline "~/org/refile.org" "Refile")
 	 "* TODO %? :task:\n  - State \"TODO\"       from \"\"           %T\n\n  %i\n")
 
-	("b" "Bug" entry (file+headline "~/code/refile.org" "Refile")
+	("b" "Bug" entry (file+headline "~/org/refile.org" "Refile")
 	 "* TODO %? :bug:\n  - State \"TODO\"       from \"\"           %T\n  - FROM: %a\n\n  %i\n")
 
-	("q" "Question" entry (file+headline "~/code/refile.org" "Refile")
+	("q" "Question" entry (file+headline "~/org/refile.org" "Refile")
 	 "* ONGOING %? :question:\n  - State \"ONGOING\"    from \"\"           %T\n  - FROM: %a\n\n  %i\n")
 
-        ("e" "Event" entry (file+headline "~/code/refile.org" "Refile")
+        ("e" "Event" entry (file+headline "~/org/refile.org" "Refile")
 	 "* DONE %? :event:\n  - State \"DONE\"    from \"\"           %T\n\n  %i\n")
 
-	("n" "Note" entry (file+headline "~/code/refile.org" "Refile")
+	("n" "Note" entry (file+headline "~/org/refile.org" "Refile")
 	 "* %? :note:\n")))
