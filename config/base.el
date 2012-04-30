@@ -2,6 +2,7 @@
 
 (load "~/.emacs.d/config/python.el")
 (load "~/.emacs.d/config/cedet.el")
+(load "~/.emacs.d/config/magit.el")
 
 (load "~/.emacs.d/config/org.el")
 (load "~/.emacs.d/config/octave.el")

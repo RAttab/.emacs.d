@@ -7,3 +7,5 @@ vendor/cedet-1.0.1
 vendor/cedet-1.1
 vendor/org
 vendor/org-7.8.08
+vendor/magit
+vendor/magit-1.1.1
