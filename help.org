@@ -296,11 +296,25 @@
 *** C-` -> up-left
 *** C-\ -> down-right
 *** C-/ -> down-left
+** magit
+*** s/S -> stage [ALL]
+*** u/U -> unstage [ALL]
+*** x/X -> reset working tree [HARD]
+*** a/A -> apply [and commit]
+*** b/B -> switch branch
+*** i -> ignore
+*** k -> discard
+*** v -> revert
+*** P P -> push
+*** F F -> fetch & merge
+*** C-w -> copy to kill ring
+*** : -> run git command (careful because it'll dump EVERYTHING)
+*** d -> diff
+*** g -> refresh
 ** TODO Make a findsrc equivalent in emacs			       :task:
  - State "TODO"       from ""           <2012-01-16 Mon 10:25>
 
  I believe Icicle and Everything are 2 candidates but it kinda going overboard
-
 * git								       :note:
 ** Commit names
 *** master@{yesterday} -> where branch was at specified date
