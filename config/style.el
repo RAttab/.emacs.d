@@ -18,7 +18,7 @@
 		(substatement-open . 0)
 
 		(topmost-intro . 0)
-		(topmost-intro-cont . +)
+		(topmost-intro-cont . 0)
 
 		(member-init-intro . +)
 		(defun-block-intro . +)

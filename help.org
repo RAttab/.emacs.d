@@ -30,6 +30,7 @@
 *** C-x e -> execute macro (can be prefixed
 *** M-l/u -> down/upcase-word
 *** M-c -> capitalize-word
+*** C-c C-d -> delete all white space until next non-whitespace
 *** C-x C-l/u -> down/upcase-region
 *** C-M-right/left -> forward/backward-sexp (may conflict with OS keys).
 *** Spell Check
