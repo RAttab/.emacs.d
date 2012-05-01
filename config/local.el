@@ -52,3 +52,6 @@
 
 (add-hook 'c-mode-common-hook 'c-whitespace-hook)
 (add-hook 'c++-mode-common-hook 'c-whitespace-hook)
+
+;; Coffee script
+(setq coffee-command "~/bin/coffee")
