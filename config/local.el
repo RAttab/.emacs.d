@@ -38,9 +38,9 @@
 (setq compilation-search-path 
       '(nil ;; Default dir
 	"/home/remi/code/platform"
-	"/home/remi/deps"
-	"/home/remi/deps/node"
-	"/home/remi/deps/node/deps/v8"))
+	"/home/remi/code/platform-deps"
+	"/home/remi/code/platform-deps/node"
+	"/home/remi/code/platform-deps/node/deps/v8"))
 
 ;; Whitespace mode
 (require 'whitespace)
