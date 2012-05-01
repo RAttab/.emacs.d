@@ -17,9 +17,9 @@
 
 
 
-;; indent as tabs of width 2
+;; indent as 4 spaces.
 (defun c-local-style-hook ()
-	(setq indent-tabs-mode f)
+	(setq indent-tabs-mode nil)
 	(setq c-indent-level 4)
 	(setq c-basic-offset 4))
 
@@ -27,6 +27,28 @@
 (add-hook 'c++-mode-common-hook 'c-local-style-hook)
 
 
-;; cedet
+;; Compilation mode
+(setenv "PATH"
+	(concat (getenv "PATH")
+		":/home/remi/bin"
+		":/home/remi/local/bin"))
+(setenv "LD_LIBRARY_PATH" "/home/remi/local/lib")
+(setenv "PLATFORM" "/home/remi/code/platform")
 
-;;semantic-add-system-include - shove in a hook for the lang
+(setq compilation-search-path 
+      '(nil ;; Default dir
+	"/home/remi/code/platform"
+	"/home/remi/deps"
+	"/home/remi/deps/node"
+	"/home/remi/deps/node/deps/v8"))
+
+;; Whitespace mode
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face tabs lines-tail))
+
+(defun c-whitespace-hook ()
+  (whitespace-mode t))
+
+(add-hook 'c-mode-common-hook 'c-whitespace-hook)
+(add-hook 'c++-mode-common-hook 'c-whitespace-hook)
