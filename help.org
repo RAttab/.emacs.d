@@ -297,6 +297,7 @@
 *** C-\ -> down-right
 *** C-/ -> down-left
 ** magit
+*** $ -> Show git command line results.
 *** s/S -> stage [ALL]
 *** u/U -> unstage [ALL]
 *** x/X -> reset working tree [HARD]
