@@ -1,6 +1,6 @@
 
 # Emacs Cheat-Sheet
-  
+
 * Emacs								       :note:
 ** Emacs Help
 *** C-h m -> Mode information
@@ -66,7 +66,7 @@
 *** s -> save
 *** x -> Save marks
 *** ? -> help
-*** q -> quit       
+*** q -> quit
 ** Frames
 *** C-x 5 2 -> Create new frame
 *** C-x 5 0/1 -> Delete this frame/all other frames
@@ -151,7 +151,7 @@
 **** C-c C-d -> set deadline.
 **** C-x C-w -> export to file.
 *** Special macro things
-**** #+BEGIN_SRC type --- #+END_SRC 
+**** #+BEGIN_SRC type --- #+END_SRC
 **** #+ARCHIVED -> Removes a tree from the agenda stuff.
 ** Calc
 *** Global
@@ -253,7 +253,7 @@
 **** b t -> rotate
 **** b p/u -> pack/unpack into/from vector index form.
 **** b u V # -> pop(x)
-**** b u 63 <tab> - b p -> reverse(x) 
+**** b u 63 <tab> - b p -> reverse(x)
 *** Vectors
 **** v . -> summarize vector mode
 **** A -> Length of vector (as in pythagorean length)
@@ -352,7 +352,7 @@
     $ git commit --amend
     $ git rebase --continue
 
-*** Reset 
+*** Reset
     The idea is that after you reset the commits will be orphaned into their own branch.
     This means that they can be found (reflog) and merged back into the current branch.
 
@@ -382,10 +382,16 @@
 *** set args [args] -> Set arguments for next run (empty for no args).
 ** Examine
 *** p var -> print var content
+*** p/xdutacf -> print as hex/signed/unsigned/bin/adress/char/float
 *** dump/append binary/ihex memory <filename> <start_addr> <end_addr>
+*** layout src | asm | regs | split -> Show source code, asm, or both
+*** focus src | asm -> Switch to window and scroll with arrows.
 ** Logging
 *** set logging file FILE
 *** set logging [on|off]
+** Utils
+*** set $var_name=value -> Set that value for later use
+*** p $var_name -> prints a saved value (works for registers and prev cmd).
 ** Emacs
 *** gdb-restore-windows -> Restore the default multi-window thingy
 * Terminator							       :note:
@@ -394,5 +400,3 @@
 ** Ctrl+PgDn/PgUp -> switch tabs
 ** Ctrl+ +/- -> Font size
 ** Ctrl+0 -> Default font size (not the numpad).
-   
-
