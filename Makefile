@@ -5,7 +5,7 @@ MAGIT_VER=1.1.1
 MAKEINFO=makeinfo # replace with echo if makeinfo isn't available.
 CORES=2
 
-all: cedet org
+all: cedet org magit
 
 cedet:
 	-rm -rf vendor/cedet-$(CEDET_VER)
@@ -28,5 +28,4 @@ magit:
 	-rm vendor/magit
 	cd vendor && ln -s magit-$(MAGIT_VER) magit
 
-
-.PHONY: cedet org
+.PHONY: cedet org magit
