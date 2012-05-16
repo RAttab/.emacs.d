@@ -61,6 +61,11 @@
 *** + -> Create dir
 *** u/U -> Clear [ALL] marks
 *** = -> diff
+** Human text stuff
+*** M-q -> fill current paragraph
+*** M-s -> center line
+*** M-l/u/c -> lower case, upper case, capitalize
+*** C-x C-l/u -> region to logwer/uperr case.
 ** Buffer List
 *** d -> delete
 *** s -> save

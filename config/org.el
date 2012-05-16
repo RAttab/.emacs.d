@@ -19,7 +19,10 @@
 (add-hook 'org-mode-hook 'visual-line-mode) ;; visual-line-fringe-indicators
 ;; (add-hook 'org-mode-hook 'turn-on-flyspell 'append) ;; Adds way to much visual noise.
 ;; (add-hook 'org-mode-hook (lambda () (abbrev-mode 1))) ;; TBD
-
+(add-hook 'org-mode-hook
+	  (lambda ()
+	    (setq fill-column 80)
+	    (auto-fill-mode 1)))
 
 ;; Tag list
 (setq org-tag-alist '(("task" . ?t) ("bug" . ?b) ("question" . ?q) ("note" . ?n) ("event" . ?e)))
