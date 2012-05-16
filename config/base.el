@@ -46,6 +46,10 @@
 ;; Windows key as meta - bad idea if you can't rebind it in the OS.
 ;;(setq x-super-keysym 'meta)
 
+;; Ubuntu copy & paste
+(setq x-select-enable-clipboard t)
+(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
+
 ;; Create a backup file directory (removes annoying ~ files.
 ;; (defun make-backup-file-name (filename)
 ;;   (while (string-match "\\\\" (expand-file-name filename))
