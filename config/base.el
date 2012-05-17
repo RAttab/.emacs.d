@@ -50,6 +50,9 @@
 (setq x-select-enable-clipboard t)
 (setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
+;; Time in status bar
+(display-time)
+
 ;; Create a backup file directory (removes annoying ~ files.
 ;; (defun make-backup-file-name (filename)
 ;;   (while (string-match "\\\\" (expand-file-name filename))
