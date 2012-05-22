@@ -67,3 +67,18 @@
 (add-hook 'c-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'c++-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'python-mode-hook 'rattab/cedet-hook)
+
+;; === C & C++ ===
+
+;; Whitespace mode
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face tabs lines-tail))
+
+
+(defun c-config-hook ()
+  (whitespace-mode t)
+  (enable-auto-fill 80 1))
+
+(add-hook 'c-mode-common-hook 'c-config-hook)
+(add-hook 'c++-mode-common-hook 'c-condig-hook)
