@@ -42,16 +42,5 @@
 	"/home/remi/code/platform-deps/node"
 	"/home/remi/code/platform-deps/node/deps/v8"))
 
-;; Whitespace mode
-(require 'whitespace)
-(setq whitespace-line-column 80)
-(setq whitespace-style '(face tabs lines-tail))
-
-(defun c-whitespace-hook ()
-  (whitespace-mode t))
-
-(add-hook 'c-mode-common-hook 'c-whitespace-hook)
-(add-hook 'c++-mode-common-hook 'c-whitespace-hook)
-
 ;; Coffee script
 (setq coffee-command "~/bin/coffee")
