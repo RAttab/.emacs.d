@@ -28,8 +28,6 @@
 *** C-u C-x C-x -> Jump to mark.
 *** C-x (/) -> start/stop macro recording
 *** C-x e -> execute macro (can be prefixed
-*** M-l/u -> down/upcase-word
-*** M-c -> capitalize-word
 *** C-c C-d -> delete all white space until next non-whitespace
 *** C-x C-l/u -> down/upcase-region
 *** C-M-right/left -> forward/backward-sexp (may conflict with OS keys).
@@ -66,6 +64,9 @@
 *** M-s -> center line
 *** M-l/u/c -> lower case, upper case, capitalize
 *** C-x C-l/u -> region to logwer/uperr case.
+*** M-t -> swap two words.
+*** C-t -> swap two letters
+*** C-x C-t -> swap two lines
 ** Buffer List
 *** d -> delete
 *** s -> save

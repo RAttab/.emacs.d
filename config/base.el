@@ -1,19 +1,5 @@
 ;; Main .emacs file
 
-(load "~/.emacs.d/config/python.el")
-(load "~/.emacs.d/config/cedet.el")
-(load "~/.emacs.d/config/magit.el")
-
-(load "~/.emacs.d/config/org.el")
-(load "~/.emacs.d/config/octave.el")
-(load "~/.emacs.d/config/coffee.el")
-
-(load "~/.emacs.d/config/ido.el")
-
-(load "~/.emacs.d/config/local.el")
-(load "~/.emacs.d/config/style.el")
-(load "~/.emacs.d/config/project.el")
-
 ;; UI improvements
 
 (column-number-mode 1)
@@ -104,3 +90,26 @@
 ;;     (load
 ;;      (expand-file-name "~/.emacs.d/elpa/package.el"))
 ;;   (package-initialize))
+
+;; Autofill
+(defun enable-auto-fill (col comments)
+  (setq fill-column col)
+  (set (make-local-variable 'comment-auto-fill-only-comments) comments)
+  (auto-fill-mode 1))
+
+
+;; Now load our various other modes and tweaks.
+
+(load "~/.emacs.d/config/python.el")
+(load "~/.emacs.d/config/cedet.el")
+(load "~/.emacs.d/config/magit.el")
+
+(load "~/.emacs.d/config/org.el")
+(load "~/.emacs.d/config/octave.el")
+(load "~/.emacs.d/config/coffee.el")
+
+(load "~/.emacs.d/config/ido.el")
+
+(load "~/.emacs.d/config/local.el")
+(load "~/.emacs.d/config/style.el")
+(load "~/.emacs.d/config/project.el")
