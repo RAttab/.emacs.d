@@ -78,7 +78,7 @@
 (setq gdb-use-seperate-io-buffer nil) ;; meh, need to experiment.
 
 ;; Compilation
-(setq compilation-auto-jump-to-first-error t)
+(setq compilation-auto-jump-to-first-error nil)
 (setq compilation-context-lines 10)
 (setq compilation-scroll-output (quote first-error))
 
