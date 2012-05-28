@@ -5,7 +5,7 @@ MAGIT_VER=1.1.1
 MAKEINFO=makeinfo # replace with echo if makeinfo isn't available.
 CORES=2
 
-all: cedet org magit
+all: cedet org magit init-file
 
 cedet:
 	-rm -rf vendor/cedet-$(CEDET_VER)
@@ -27,5 +27,8 @@ magit:
 	cd vendor/magit-$(MAGIT_VER) && make -j$(CORES)
 	-rm vendor/magit
 	cd vendor && ln -s magit-$(MAGIT_VER) magit
+
+init-file:
+	ln -s ~/.emacs.d/.emacs ~/.emacs
 
 .PHONY: cedet org magit
