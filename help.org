@@ -31,6 +31,8 @@
 *** C-c C-d -> delete all white space until next non-whitespace
 *** C-x C-l/u -> down/upcase-region
 *** C-M-right/left -> forward/backward-sexp (may conflict with OS keys).
+*** C-M-a/e -> Begin/End of func
+*** M-a/e -> Begin/End of statement
 *** Spell Check
 **** M-x flyspell-mode -> highlighter
 **** M-x flyspell-prog-mode -> comments and string only
