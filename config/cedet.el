@@ -78,7 +78,9 @@
 
 (defun c-config-hook ()
   (whitespace-mode t)
-  (enable-auto-fill 80 1))
+  (setq fill-column 80)
+  ;; (enable-auto-fill 80 1) ;; Sadly it's incredibly buggy. Just use M-q instead.
+  )
 
 (add-hook 'c-mode-common-hook 'c-config-hook)
 (add-hook 'c++-mode-common-hook 'c-condig-hook)
