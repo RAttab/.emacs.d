@@ -33,6 +33,7 @@
 *** C-M-right/left -> forward/backward-sexp (may conflict with OS keys).
 *** C-M-a/e -> Begin/End of func
 *** M-a/e -> Begin/End of statement
+*** M-x rgrep -> grep via find
 *** Spell Check
 **** M-x flyspell-mode -> highlighter
 **** M-x flyspell-prog-mode -> comments and string only
@@ -320,10 +321,6 @@
 *** : -> run git command (careful because it'll dump EVERYTHING)
 *** d -> diff
 *** g -> refresh
-** TODO Make a findsrc equivalent in emacs			       :task:
- - State "TODO"       from ""           <2012-01-16 Mon 10:25>
-
- I believe Icicle and Everything are 2 candidates but it kinda going overboard
 * git								       :note:
 ** Commit names
 *** master@{yesterday} -> where branch was at specified date
