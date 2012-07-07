@@ -110,6 +110,7 @@
 (load "~/.emacs.d/config/coffee.el")
 
 (load "~/.emacs.d/config/ido.el")
+(load "~/.emacs.d/config/yasnippet.el")
 
 (load "~/.emacs.d/config/local.el")
 (load "~/.emacs.d/config/style.el")

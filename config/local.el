@@ -17,9 +17,9 @@
 
 
 
-;; indent as tabs of width 2
+;; indent as 4 spaces.
 (defun c-local-style-hook ()
-	(setq indent-tabs-mode f)
+	(setq indent-tabs-mode nil)
 	(setq c-indent-level 4)
 	(setq c-basic-offset 4))
 

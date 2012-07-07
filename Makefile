@@ -1,11 +1,12 @@
 CEDET_VER=1.1
 ORG_VER=7.8.08
 MAGIT_VER=1.1.1
+YASNIPPET_VER=0.7.0
 
 MAKEINFO=makeinfo # replace with echo if makeinfo isn't available.
 CORES=2
 
-all: cedet org magit init-file
+all: cedet org magit yasnippet init-file
 
 cedet:
 	-rm -rf vendor/cedet-$(CEDET_VER)
@@ -28,7 +29,13 @@ magit:
 	-rm vendor/magit
 	cd vendor && ln -s magit-$(MAGIT_VER) magit
 
+yasnippet:
+	-rm -rf vendor/yasnippet-$(YASNIPPET_VER)
+	cd vendor && tar xf yasnippet-$(YASNIPPET_VER).tar
+	-rm vendor/yasnippet
+	cd vendor && ln -s yasnippet-$(YASNIPPET_VER) yasnippet
+
 init-file:
 	ln -s ~/.emacs.d/.emacs ~/.emacs
 
-.PHONY: cedet org magit
+.PHONY: cedet org magit yasnippet
