@@ -116,11 +116,11 @@
 
 ;; Now load our various other modes and tweaks.
 
-(load-if-exists "~/.emacs.d/config/local.el")
-(load-if-exists "~/.emacs.d/config/project.el")
-
 (load "~/.emacs.d/config/ido.el")
 (load "~/.emacs.d/config/yasnippet.el")
+
+(load "~/.emacs.d/config/magit.el")
+(load "~/.emacs.d/config/org.el")
 
 (load "~/.emacs.d/config/coffee.el")
 (load "~/.emacs.d/config/python.el")
@@ -128,6 +128,6 @@
 
 (load "~/.emacs.d/config/cedet.el")
 (load "~/.emacs.d/config/style.el")
+(load-if-exists "~/.emacs.d/config/project.el")
 
-(load "~/.emacs.d/config/magit.el")
-(load "~/.emacs.d/config/org.el")
+(load-if-exists "~/.emacs.d/config/local.el")
