@@ -57,7 +57,7 @@
   (local-set-key "\C-cs" 'semantic-ia-show-summary)
   (local-set-key "\C-cd" 'semantic-ia-show-doc)
   (local-set-key "\C-cj" 'semantic-ia-fast-jump)
-  
+
   (local-set-key "\C-cr" 'semantic-symref)
   (local-set-key "\C-cR" 'semantic-symref-symbol)
 
@@ -75,12 +75,15 @@
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face tabs lines-tail))
 
-
 (defun c-config-hook ()
   (whitespace-mode t)
-  (setq fill-column 80)
+  (Setq fill-column 80)
   ;; (enable-auto-fill 80 1) ;; Sadly it's incredibly buggy. Just use M-q instead.
-  )
+
+  ; 4 space indent
+  (setq indent-tabs-mode nil)
+  (setq c-indent-level 4)
+  (setq c-basic-offset 4))
 
 (add-hook 'c-mode-common-hook 'c-config-hook)
 (add-hook 'c++-mode-common-hook 'c-condig-hook)

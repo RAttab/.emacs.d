@@ -2,6 +2,8 @@
 *.elc
 *-compile-script
 *-make-script
+config/local.el
+config/project.el
 vendor/cedet
 vendor/cedet-1.0.1
 vendor/cedet-1.1

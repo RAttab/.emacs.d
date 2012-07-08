@@ -2,6 +2,18 @@
 
 ;; UI improvements
 
+(setq default-frame-alist
+      '((top . 0) (left . 0)
+        (width . 200) (height . 60)
+        (cursor-color . "white")
+        (cursor-type . box)
+        (foreground-color . "yellow")
+        (background-color . "black")))
+;;      (font . "-*-Courier-normal-r-*-*-13-*-*-*-c-*-iso8859-1")))
+
+(set-face-attribute 'default nil :height 80)
+(setq initial-frame-alist '((top . 10) (left . 30)))
+
 (column-number-mode 1)
 (show-paren-mode 1)
 (size-indication-mode 1)
@@ -99,19 +111,21 @@
   (auto-fill-mode 1))
 
 
+
 ;; Now load our various other modes and tweaks.
 
-(load "~/.emacs.d/config/python.el")
-(load "~/.emacs.d/config/cedet.el")
-(load "~/.emacs.d/config/magit.el")
-
-(load "~/.emacs.d/config/org.el")
-(load "~/.emacs.d/config/octave.el")
-(load "~/.emacs.d/config/coffee.el")
+(load "~/.emacs.d/config/local.el")
+(load "~/.emacs.d/config/project.el")
 
 (load "~/.emacs.d/config/ido.el")
 (load "~/.emacs.d/config/yasnippet.el")
 
-(load "~/.emacs.d/config/local.el")
+(load "~/.emacs.d/config/coffee.el")
+(load "~/.emacs.d/config/python.el")
+(load "~/.emacs.d/config/octave.el")
+
+(load "~/.emacs.d/config/cedet.el")
 (load "~/.emacs.d/config/style.el")
-(load "~/.emacs.d/config/project.el")
+
+(load "~/.emacs.d/config/magit.el")
+(load "~/.emacs.d/config/org.el")
