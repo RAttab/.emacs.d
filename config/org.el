@@ -9,7 +9,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;; Controls where the agenda will look for it's files. A directory means that all 
+;; Controls where the agenda will look for it's files. A directory means that all
 (setq org-agenda-files '("~/.emacs.d" "~/code" "~/org"))
 
 (setq org-startup-indented t) ;space indented lists (no stars) - emacs 23.2 & +
@@ -20,8 +20,12 @@
 ;; (add-hook 'org-mode-hook (lambda () (abbrev-mode 1))) ;; TBD
 (add-hook 'org-mode-hook (lambda () (enable-auto-fill 80 nil)))
 
-;; Tag list
-(setq org-tag-alist '(("task" . ?t) ("bug" . ?b) ("question" . ?q) ("note" . ?n) ("event" . ?e)))
+
+;; Source Block
+
+;; Syntax highlighting for source block.
+(setq org-src-fontify-natively t)
+
 
 ;; Refile
 
@@ -36,6 +40,12 @@
 ;; Use IDO for both buffer and file completion and ido-everywhere to t
 (setq org-completion-use-ido t)
 
+;; Tags
+(setq org-tag-alist '(("task" . ?t)
+		      ("bug" . ?b)
+		      ("question" . ?q)
+		      ("note" . ?n)
+		      ("event" . ?e)))
 
 ;; States - keep it simple.
 (setq org-todo-keywords
@@ -44,7 +54,6 @@
       (quote (("TODO" :foreground "red" :weight bold)
 	      ("ONGOING" :foreground "green" :weight bold)
 	      ("DONE" :foreground "blue" :weight bold))))
-
 
 ;; Capture
 (setq org-deault-notes-file (expand-file-name "~/org/refile.org"))
