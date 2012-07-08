@@ -110,12 +110,14 @@
   (set (make-local-variable 'comment-auto-fill-only-comments) comments)
   (auto-fill-mode 1))
 
-
+(defun load-if-exists (file)
+  "Loads a file only if it exists"
+  (if (file-exists-p file) (load file)))
 
 ;; Now load our various other modes and tweaks.
 
-(load "~/.emacs.d/config/local.el")
-(load "~/.emacs.d/config/project.el")
+(load-if-exists "~/.emacs.d/config/local.el")
+(load-if-exists "~/.emacs.d/config/project.el")
 
 (load "~/.emacs.d/config/ido.el")
 (load "~/.emacs.d/config/yasnippet.el")
