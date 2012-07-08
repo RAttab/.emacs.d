@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: copy plumbing
+# key: copy
+# --
+${1:Foo}(const $1& other) :
+    ${2:bar}(other.$2) $0
+{}
+
+$1& operator=(const $1& other)
+{
+    if (this != &other) return *this;
+
+    $2 = other.$2;
+
+    return *this;
+}
