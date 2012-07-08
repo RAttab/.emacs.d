@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: it
+# key: forit
+# --
+for (auto it = ${1:v}.begin(), end = $1.end(); it != end; ++it) {
+$0
+}

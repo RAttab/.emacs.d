@@ -6,6 +6,7 @@
 (show-paren-mode 1)
 (size-indication-mode 1)
 
+(setq confirm-kill-emacs 'yes-or-no-p)
 (setq inhibit-splash-screen t)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -109,6 +110,7 @@
 (load "~/.emacs.d/config/coffee.el")
 
 (load "~/.emacs.d/config/ido.el")
+(load "~/.emacs.d/config/yasnippet.el")
 
 (load "~/.emacs.d/config/local.el")
 (load "~/.emacs.d/config/style.el")

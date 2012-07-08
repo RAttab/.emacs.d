@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: cc-test
+# key: rs-file
+# expand-env: ((yas/indent-line 'fixed))
+# --
+/** `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
+    Rémi Attab, `(format-time-string "%d %b %Y")`
+    Copyright (c) `(format-time-string "%Y")` Recoset.  All rights reserved.
+
+    ${1:Description}
+
+*/
+
+#define BOOST_TEST_MAIN
+#define BOOST_TEST_DYN_LINK
+
+#include <boost/test/unit_test.hpp>
+
+using namespace std;
+using namespace ML;
+using namespace Recoset;
+
+BOOST_AUTO_TEST_CASE( ${2:test_something} )
+{
+$0
+}

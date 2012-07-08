@@ -15,7 +15,7 @@
 (set-face-attribute 'default nil :height 80)
 (setq initial-frame-alist '((top . 10) (left . 30)))
 
-;; indent as tabs of width 2
+;; indent as 4 spaces.
 (defun c-local-style-hook ()
 	(setq indent-tabs-mode nil)
 	(setq c-indent-level 4)
