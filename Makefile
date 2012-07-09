@@ -2,6 +2,7 @@ CEDET_VER=1.1
 ORG_VER=7.8.08
 MAGIT_VER=1.1.1
 YASNIPPET_VER=0.7.0
+LUA_VER=66cd58a
 
 MAKEINFO=makeinfo # replace with echo if makeinfo isn't available.
 CORES=2
@@ -34,6 +35,13 @@ yasnippet:
 	cd vendor && tar xf yasnippet-$(YASNIPPET_VER).tar
 	-rm vendor/yasnippet
 	cd vendor && ln -s yasnippet-$(YASNIPPET_VER) yasnippet
+
+lua-mode:
+	-rm -rf vendor/immerrr-lua-mode-$(LUA_VER)
+	cd vendor && tar xzf immerrr-lua-mode-$(LUA_VER).tar.gz
+	cd vendor/immerrr-lua-mode-$(LUA_VER) && make -j$(CORES)
+	-rm vendor/lua-mode
+	cd vendor && ln -s immerrr-lua-mode-$(LUA_VER) lua-mode
 
 init-file:
 	ln -s ~/.emacs.d/.emacs ~/.emacs

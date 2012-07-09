@@ -124,6 +124,7 @@
 
 (load "~/.emacs.d/config/coffee.el")
 (load "~/.emacs.d/config/python.el")
+(load "~/.emacs.d/config/lua.el")
 (load "~/.emacs.d/config/octave.el")
 
 (load "~/.emacs.d/config/cedet.el")
