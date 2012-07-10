@@ -14,7 +14,7 @@
 #ifndef __${2:mmap}__${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}_h__
 #define __$2__$3_h_
 
-namepsace Recoset {
+namespace Recoset {
 
 $0
 

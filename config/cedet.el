@@ -77,7 +77,7 @@
 
 (defun c-config-hook ()
   (whitespace-mode t)
-  (Setq fill-column 80)
+  (setq fill-column 80)
   ;; (enable-auto-fill 80 1) ;; Sadly it's incredibly buggy. Just use M-q instead.
 
   ; 4 space indent
