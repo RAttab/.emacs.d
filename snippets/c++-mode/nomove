@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Delete move constructor and operator
+# key: nomove
+# --
+${1:Foo}(const $1&& other) = delete;
+$1& operator=(const $1&& other) = delete;
+$0

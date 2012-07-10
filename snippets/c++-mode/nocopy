@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Delete copy constructor and operator
+# key: nocopy
+# --
+${1:Foor}(const $1& other) = delete;
+$1& operator=(const $1& other) = delete;
+$0
