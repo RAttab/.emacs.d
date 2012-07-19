@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: h
+# name: cc-js
 # key: rs-file
 # expand-env: ((yas/indent-line 'fixed))
 # --
@@ -11,13 +11,21 @@
 
 */
 
-#ifndef __${2:mmap}__${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}_h__
-#define __$2__$3_h__
+
+#include "js/js_wrapped.h"
+#include "js/js_call.h"
+#include "sigslot/slot.h"
+#include "jml/utils/smart_ptr_utils.h"
+
+using namespace std;
+using namespace v8;
+using namespace node;
+
 
 namespace Recoset {
+namespace JS {
 
 $0
 
-} // Recoset
-
-#endif // __$2__$3_h__
+} // namepsace JS
+} // namespace Recoset

@@ -1,0 +1,104 @@
+# -*- mode: snippet -*-
+# name: JS Wrapper Class
+# key: rs-jswrap
+# expand-env: ((yas/indent-line 'fixed))
+# --
+extern const char* const ${2:Foo}Name;
+const char * const $2Name = "$2";
+
+struct $2JS :
+    public JSWrapped2<
+        $2,
+        $2JS,
+        $2Name,
+        ${3:foo}Module>
+{
+    $2JS() {}
+
+    $2JS(
+            v8::Handle<v8::Object> This,
+            const boost::shared_ptr<$2>& ${4:foo} =
+                boost::shared_ptr<$2>())
+    {
+        HandleScope scope;
+        wrap(This, $4);
+    }
+
+    static Handle<v8::Value>
+    New(const Arguments& args)
+    {
+        try {
+            // \todo Constructor args$0
+
+            auto obj = ML::make_sp(new $2());
+            new $2JS(args.This(), obj);
+
+            return args.This();
+        }
+        HANDLE_JS_EXCEPTIONS;
+    }
+
+
+    static void
+    Initialize()
+    {
+        Persistent<FunctionTemplate> t = Register(New);
+
+        // registerRWProperty(&$2::var, "var", v8::DontDelete);
+        // registerMemberFn(&$2::foo, "foo");
+        // NODE_SET_PROTOTYPE_METHOD(t, "bar", bar);
+    }
+
+    /** NODE_SET_PROTOTYPE_METHOD template
+    static Handle<Value>
+    bar(const Arguments& args)
+    {
+        try {
+            ExcAssert(args.Length() == 1 && !args[0]->IsUndefined());
+            string baz = getArg<string>(args, 0, "default", "name");
+
+            getShared(args)->bar(baz);
+
+            return Handle<Value>();
+        } HANDLE_JS_EXCEPTIONS;
+    }
+    */
+};
+
+boost::shared_ptr<$2>
+from_js(const JSValue& value, boost::shared_ptr<$2>*)
+{
+    return $2JS::fromJS(value);
+}
+
+boost::shared_ptr<$2>
+from_js_ref(const JSValue& value, boost::shared_ptr<$2>*)
+{
+    return $2JS::fromJS(value);
+}
+
+$2*
+from_js(const JSValue& value, $2**)
+{
+    return $2JS::fromJS(value).get();
+}
+
+void
+to_js(JS::JSValue& value, const boost::shared_ptr<$2>& $4)
+{
+    value = $2JS::toJS($4);
+}
+
+boost::shared_ptr<$2>
+get$2SharedPointer(const JS::JSValue & value)
+{
+    if($2JS::tmpl->HasInstance(value))
+    {
+        boost::shared_ptr<$2> $4 =
+            $2JS::getSharedPtr(value);
+        return $4;
+    }
+    boost::shared_ptr<$2> $4;
+    return $4;
+}
+
