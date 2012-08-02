@@ -12,8 +12,11 @@
 */
 
 
+#include "`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.h"
 #include "js/js_wrapped.h"
 #include "js/js_call.h"
+#include "js/js_utils.h"
+#include "js/js_registry.h"
 #include "sigslot/slot.h"
 #include "jml/utils/smart_ptr_utils.h"
 

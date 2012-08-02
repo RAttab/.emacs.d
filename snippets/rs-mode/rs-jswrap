@@ -54,11 +54,11 @@ struct $2JS :
     bar(const Arguments& args)
     {
         try {
-            ExcAssert(args.Length() == 1 && !args[0]->IsUndefined());
             string baz = getArg<string>(args, 0, "default", "name");
 
             getShared(args)->bar(baz);
 
+	    // return toJS(ret);
             return Handle<Value>();
         } HANDLE_JS_EXCEPTIONS;
     }
