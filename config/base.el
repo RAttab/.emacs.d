@@ -4,8 +4,7 @@
 
 (set-face-attribute 'default nil
 		    :height 80
-		    :foreground "yellow"
-		    :background "black")
+		    :foreground "yellow")
 
 (setq initial-frame-alist '((top . 10) (left . 30)))
 
