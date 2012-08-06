@@ -58,7 +58,7 @@ struct $2JS :
 
             getShared(args)->bar(baz);
 
-	    // return toJS(ret);
+	    // return Recoset::JS::toJS(ret);
             return Handle<Value>();
         } HANDLE_JS_EXCEPTIONS;
     }
