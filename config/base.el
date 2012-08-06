@@ -2,16 +2,11 @@
 
 ;; UI improvements
 
-(setq default-frame-alist
-      '((top . 0) (left . 0)
-        (width . 200) (height . 60)
-        (cursor-color . "white")
-        (cursor-type . box)
-        (foreground-color . "yellow")
-        (background-color . "black")))
-;;      (font . "-*-Courier-normal-r-*-*-13-*-*-*-c-*-iso8859-1")))
+(set-face-attribute 'default nil
+		    :height 80
+		    :foreground "yellow"
+		    :background "black")
 
-(set-face-attribute 'default nil :height 80)
 (setq initial-frame-alist '((top . 10) (left . 30)))
 
 (column-number-mode 1)
