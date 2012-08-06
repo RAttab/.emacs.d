@@ -67,23 +67,3 @@
 (add-hook 'c-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'c++-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'python-mode-hook 'rattab/cedet-hook)
-
-;; === C & C++ ===
-
-;; Whitespace mode
-(require 'whitespace)
-(setq whitespace-line-column 80)
-(setq whitespace-style '(face tabs lines-tail))
-
-(defun c-config-hook ()
-  (whitespace-mode t)
-  (setq fill-column 80)
-  ;; (enable-auto-fill 80 1) ;; Sadly it's incredibly buggy. Just use M-q instead.
-
-  ; 4 space indent
-  (setq indent-tabs-mode nil)
-  (setq c-indent-level 4)
-  (setq c-basic-offset 4))
-
-(add-hook 'c-mode-common-hook 'c-config-hook)
-(add-hook 'c++-mode-common-hook 'c-condig-hook)
