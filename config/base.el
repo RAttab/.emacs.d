@@ -76,6 +76,7 @@
 
 ;; Dired for directory listing (same as C-xd). Avoids confusion.
 (global-set-key "\C-x\C-d" 'dired)
+(setq dired-listing-switches "-alh")
 
 ;; Renders color codes in shell.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
