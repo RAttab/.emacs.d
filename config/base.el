@@ -17,6 +17,8 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 (scroll-bar-mode -1)
+(add-to-list 'warning-suppress-types '(undo discard-info))
+
 ;; Disable the backgrounding keys (super annoying)
 (global-set-key "\C-z" nil)
 (global-set-key "\C-x\C-z" nil)
