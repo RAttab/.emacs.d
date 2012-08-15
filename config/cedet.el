@@ -1,3 +1,9 @@
+;; General CEDET configuration.
+
+
+;; -----------------------------------------------------------------------------
+;; Load CEDET itself
+;; -----------------------------------------------------------------------------
 
 (load-file "~/.emacs.d/vendor/cedet/common/cedet.el")
 
@@ -8,7 +14,10 @@
 
 (global-ede-mode t)
 
-;; === Semantic ===
+
+;; -----------------------------------------------------------------------------
+;; Semantic
+;; -----------------------------------------------------------------------------
 
 ;; Configure by hand but still enable a minimum.
 (semantic-load-enable-code-helpers)
@@ -39,7 +48,10 @@
 (setq-mode-local c++-mode semanticdb-find-default-throttle
                  '(local recursive unloaded))
 
-;; === Hook ===
+
+;; -----------------------------------------------------------------------------
+;; Hook
+;; -----------------------------------------------------------------------------
 
 (add-hook 'semantic-init-hooks 'senator-minor-mode)
 

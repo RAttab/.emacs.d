@@ -1,8 +1,19 @@
+;; Org mode
+
+
+;; -----------------------------------------------------------------------------
+;; Load & associate mode
+;; -----------------------------------------------------------------------------
 
 ;; Load my org-mode version & associate with files
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/org/lisp"))
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 (require 'org-install)
+
+
+;; -----------------------------------------------------------------------------
+;; Global config
+;; -----------------------------------------------------------------------------
 
 (add-hook 'org-mode-hook 'turn-on-font-lock)
 (global-set-key "\C-cl" 'org-store-link)
@@ -18,16 +29,15 @@
 (add-hook 'org-mode-hook 'visual-line-mode) ;; visual-line-fringe-indicators
 ;; (add-hook 'org-mode-hook 'turn-on-flyspell 'append) ;; Adds way to much visual noise.
 ;; (add-hook 'org-mode-hook (lambda () (abbrev-mode 1))) ;; TBD
-(add-hook 'org-mode-hook (lambda () (enable-auto-fill 80 nil)))
-
-
-;; Source Block
+(add-hook 'org-mode-hook (lambda () (utils/enable-auto-fill 80 nil)))
 
 ;; Syntax highlighting for source block.
 (setq org-src-fontify-natively t)
 
 
+;; -----------------------------------------------------------------------------
 ;; Refile
+;; -----------------------------------------------------------------------------
 
 ;; Targets
 (setq org-refile-targets '((nil :maxlevel . 2)(org-agenda-files :maxlevel . 2)))
@@ -40,14 +50,22 @@
 ;; Use IDO for both buffer and file completion and ido-everywhere to t
 (setq org-completion-use-ido t)
 
+
+;; -----------------------------------------------------------------------------
 ;; Tags
+;; -----------------------------------------------------------------------------
+
 (setq org-tag-alist '(("task" . ?t)
 		      ("bug" . ?b)
 		      ("question" . ?q)
 		      ("note" . ?n)
 		      ("event" . ?e)))
 
-;; States - keep it simple.
+
+;; -----------------------------------------------------------------------------
+;; States
+;; -----------------------------------------------------------------------------
+
 (setq org-todo-keywords
       (quote ((sequence "TODO(t!)" "ONGOING(o!)" "DONE(d!)"))))
 (setq org-todo-keyword-faces
@@ -55,7 +73,11 @@
 	      ("ONGOING" :foreground "green" :weight bold)
 	      ("DONE" :foreground "blue" :weight bold))))
 
+
+;; -----------------------------------------------------------------------------
 ;; Capture
+;; -----------------------------------------------------------------------------
+
 (setq org-deault-notes-file (expand-file-name "~/org/refile.org"))
 (global-set-key "\C-cc" 'org-capture)
 

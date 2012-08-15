@@ -24,3 +24,7 @@
 
 ;; Coffee script
 (setq coffee-command "~/bin/coffee")
+
+
+;; Disables warnings about overflowing the undo buffer.
+(add-to-list 'warning-suppress-types '(undo discard-info))

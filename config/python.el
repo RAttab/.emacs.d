@@ -1,3 +1,6 @@
+;; Python Mode
+;;
+;; Could use some extra configuration.
 
 ;; Automatic indentation on newline
 (add-hook 'python-mode-hook '

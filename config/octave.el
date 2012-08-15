@@ -1,3 +1,6 @@
+;; Octave mode
+;;
+;; I don't use this anymore and it needs some cleaning up.
 
 ;; bind octave-move to .m files.
 (autoload 'octave-mode "octave-mod" nil t)

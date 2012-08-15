@@ -1,29 +1,35 @@
-;; c-style file. 
+;; C/C++ Style definition.
 
-;; Whitespace mode
-(require 'whitespace)
-(setq whitespace-line-column 80)
-(setq whitespace-style '(face tabs lines-tail))
 
-(defun c-config-hook ()
+;; -----------------------------------------------------------------------------
+;; General formatting
+;; -----------------------------------------------------------------------------
+
+(defun utils/c-config-hook ()
   (whitespace-mode t)
+  (setq show-trailing-whitespace nil)
   (setq fill-column 80)
-  ;; (enable-auto-fill 80 1) ;; Sadly it's incredibly buggy. Just use M-q instead.
+
+  ;; Sadly it's incredibly buggy. Just use M-q instead.
+  ;; (utils/enable-auto-fill 80 1)
 
   ; 4 space indent
   (setq indent-tabs-mode nil)
   (setq c-indent-level 4)
   (setq c-basic-offset 4))
 
-(add-hook 'c-mode-common-hook 'c-config-hook)
-(add-hook 'c++-mode-common-hook 'c-condig-hook)
+(add-hook 'c-mode-common-hook 'utils/c-config-hook)
+(add-hook 'c++-mode-common-hook 'utils/c-condig-hook)
 
-;; C-c C-o For offsets-alist name at line
-(defun c-style-hook ()
-  (setq show-trailing-whitespace nil)
-  
-  (setq c-offsets-alist 
-	(quote ((innamespace . 0) 
+
+;; -----------------------------------------------------------------------------
+;; Indentation guide
+;; -----------------------------------------------------------------------------
+
+(defun utils/c-style-hook ()
+  ;; C-c C-o For offsets-alist name at line
+  (setq c-offsets-alist
+	(quote ((innamespace . 0)
 		(inclass . +)
 		(access-label . -)
 
@@ -50,8 +56,5 @@
 		(stream-op . +)
 		))))
 
-(add-hook 'c-mode-common-hook 'c-style-hook)
-(add-hook 'c++-mode-common-hook 'c-style-hook)
-
-
-
+(add-hook 'c-mode-common-hook 'utils/c-style-hook)
+(add-hook 'c++-mode-common-hook 'utils/c-style-hook)

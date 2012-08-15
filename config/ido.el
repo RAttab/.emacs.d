@@ -1,5 +1,13 @@
 ;; Interactive do mode.
+;;
+;; Best mode since sliced bread.
+
 (require 'ido)
+
+
+;; -----------------------------------------------------------------------------
+;; Config
+;; -----------------------------------------------------------------------------
 
 (setq ido-case-fold t)
 (setq ido-enable-dot-prefix t)
@@ -11,6 +19,9 @@
 (ido-mode 'both)
 
 
+;; -----------------------------------------------------------------------------
+;; Vertical display
+;; -----------------------------------------------------------------------------
 
 ;; Display ido results vertically, rather than horizontally
 (setq ido-decorations 
