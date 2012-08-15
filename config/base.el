@@ -1,10 +1,14 @@
 ;; Entry point for my emacs config.
 
 ;; -----------------------------------------------------------------------------
-;; Utilities used everywhere.
+;; Utilities
 ;; -----------------------------------------------------------------------------
 
 (load "~/.emacs.d/config/utils.el")
+
+;; Determines whether we want to load cedet or not.
+;; Should be changed in the local.el file.
+(setq utils/enable-cedet t)
 
 
 ;; -----------------------------------------------------------------------------
@@ -42,8 +46,8 @@
 
 ;; C/C++
 (utils/load-config "style.el")
-(utils/load-config "cedet.el")
-(utils/load-config-if-exists "project.el")
+(if utils/enable-cedet (utils/load-config "cedet.el"))
+(if utils/enable-cedet (utils/load-config-if-exists "project.el"))
 
 ;; Other languages
 (utils/load-config "coffee.el")
