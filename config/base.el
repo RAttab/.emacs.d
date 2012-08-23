@@ -25,8 +25,12 @@
 ;; Useful shortcuts
 (global-set-key "\M-sr" 'replace-string)
 (global-set-key "\M-se" 'replace-regexp)
+(global-set-key "\M-ss" 'search-forward-regexp)
 (global-set-key "\C-c\C-c" 'comment-region)
 (global-set-key [f5] 'utils/revert-buffer-no-confirm)
+
+;; Not quite c-hungry-delete but close enough for now.
+(global-set-key "\C-c\C-d" 'just-one-space)
 
 
 ;; -----------------------------------------------------------------------------
