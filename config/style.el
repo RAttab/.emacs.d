@@ -6,7 +6,7 @@
 
 (defun utils/c-general-init ()
   (c-add-style "me-general"
-	       '(nil (c-offsets-alist
+	       '((c-offsets-alist
 
 			;; C-c C-o For offsets-alist name at line
 			(innamespace . 0)
