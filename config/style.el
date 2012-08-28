@@ -41,8 +41,6 @@
 
 
 (defun utils/c-general-load ()
-  (message "Loading general style")
-
   (whitespace-mode t)
   (setq show-trailing-whitespace nil)
   (setq fill-column 80)
@@ -82,8 +80,6 @@
 
 
 (defun utils/c-linux-load ()
-  (message "Loading linux style")
-
   (setq show-trailing-whitespace t)
   ;;(add-to-list ‘write-file-functions ‘delete-trailing-whitespace)
 
