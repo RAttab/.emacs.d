@@ -1,11 +1,48 @@
 ;; C/C++ Style definition.
 
-
 ;; -----------------------------------------------------------------------------
-;; General formatting
+;; My general style
 ;; -----------------------------------------------------------------------------
 
-(defun utils/c-config-hook ()
+(defun utils/c-general-init ()
+  (c-add-style "me-general"
+	       '(nil (c-offsets-alist
+
+			;; C-c C-o For offsets-alist name at line
+			(innamespace . 0)
+			(inclass . +)
+			(access-label . -)
+
+			(statement-block-intro . +)
+			(statement-cont . +)
+			(statement-case-intro . +)
+
+			(substatement . +)
+			(substatement-open . 0)
+
+			(topmost-intro . 0)
+			(topmost-intro-cont . 0)
+
+			(member-init-intro . +)
+			(defun-block-intro . +)
+
+			(arglist-intro . ++)
+			(arglist-cont-nonempty . ++)
+			(template-args-cont . +)
+
+			(brace-list-intro . +)
+
+			(cpp-define-intro . +)
+			(stream-op . +)
+			))))
+
+(add-hook 'c-mode-common-hook 'utils/c-general-init)
+(add-hook 'c++-mode-common-hook 'utils/c-general-init)
+
+
+(defun utils/c-general-load ()
+  (message "Loading general style")
+
   (whitespace-mode t)
   (setq show-trailing-whitespace nil)
   (setq fill-column 80)
@@ -16,45 +53,54 @@
   ; 4 space indent
   (setq indent-tabs-mode nil)
   (setq c-indent-level 4)
-  (setq c-basic-offset 4))
+  (setq c-basic-offset 4)
 
-(add-hook 'c-mode-common-hook 'utils/c-config-hook)
-(add-hook 'c++-mode-common-hook 'utils/c-condig-hook)
+  (c-set-style "me-general"))
 
 
 ;; -----------------------------------------------------------------------------
-;; Indentation guide
+;; Linux Kernel style
 ;; -----------------------------------------------------------------------------
 
-(defun utils/c-style-hook ()
-  ;; C-c C-o For offsets-alist name at line
-  (setq c-offsets-alist
-	(quote ((innamespace . 0)
-		(inclass . +)
-		(access-label . -)
+(defun c-lineup-arglist-tabs-only (ignored)
+  "Line up argument lists by tabs, not spaces"
+  (let* ((anchor (c-langelem-pos c-syntactic-element))
+	 (column (c-langelem-2nd-pos c-syntactic-element))
+	 (offset (- (1+ column) anchor))
+	 (steps (floor offset c-basic-offset)))
+    (* (max steps 1) c-basic-offset)))
 
-		(statement-block-intro . +)
-		(statement-cont . +)
-		(statement-case-intro . +)
 
-		(substatement . +)
-		(substatement-open . 0)
+(defun utils/c-linux-init ()
+  (c-add-style "linux-tabs-only"
+	       '("linux" (c-offsets-alist
+			  (arglist-cont-nonempty
+			   c-lineup-gcc-asm-reg
+			   c-lineup-arglist-tabs-only)))))
 
-		(topmost-intro . 0)
-		(topmost-intro-cont . 0)
+(add-hook 'c-mode-common-hook 'utils/c-linux-init)
 
-		(member-init-intro . +)
-		(defun-block-intro . +)
 
-		(arglist-intro . ++)
-		(arglist-cont-nonempty . ++)
-		(template-args-cont . +)
+(defun utils/c-linux-load ()
+  (message "Loading linux style")
 
-		(brace-list-intro . +)
+  (setq show-trailing-whitespace t)
+  ;;(add-to-list ‘write-file-functions ‘delete-trailing-whitespace)
 
-		(cpp-define-intro . +)
-		(stream-op . +)
-		))))
+  (setq fill-column 80)
+  (setq indent-tabs-mode t)
 
-(add-hook 'c-mode-common-hook 'utils/c-style-hook)
-(add-hook 'c++-mode-common-hook 'utils/c-style-hook)
+  (c-set-style "linux-tabs-only"))
+
+;; -----------------------------------------------------------------------------
+;; C & C++ hook
+;; -----------------------------------------------------------------------------
+
+(defun utils/c-hook ()
+  (let ((filename (buffer-file-name)))
+    ;; Enable kernel mode for the appropriate files
+    (if (and filename (string-match (expand-file-name "~/code/linux") filename))
+	(utils/c-linux-load) (utils/c-general-load))))
+
+(add-hook 'c-mode-hook 'utils/c-hook)
+(add-hook 'c++-mode-hook 'utils/c-hook)
