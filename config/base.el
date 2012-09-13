@@ -22,9 +22,21 @@
 ;; Avoids spliting windows when opening buffer list
 (global-set-key "\C-x\C-b" 'buffer-menu)
 
-;; Movement keys
+;; Movement keys (the true emacs way)
 (global-set-key "\M-n" 'forward-paragraph)
 (global-set-key "\M-p" 'backward-paragraph)
+(global-unset-key (kbd "<up>"))
+(global-unset-key (kbd "<C-up>"))
+(global-unset-key (kbd "<M-up>"))
+(global-unset-key (kbd "<down>"))
+(global-unset-key (kbd "<C-down>"))
+(global-unset-key (kbd "<M-down>"))
+(global-unset-key (kbd "<left>"))
+(global-unset-key (kbd "<C-left>"))
+(global-unset-key (kbd "<M-left>"))
+(global-unset-key (kbd "<right>"))
+(global-unset-key (kbd "<C-right>"))
+(global-unset-key (kbd "<M-right>"))
 
 ;; Useful shortcuts
 (global-set-key "\M-sr" 'replace-string)
