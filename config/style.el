@@ -13,6 +13,8 @@
 			(inclass . +)
 			(access-label . -)
 
+			(inline-open . 0)
+
 			(statement-block-intro . +)
 			(statement-cont . +)
 			(statement-case-intro . +)
