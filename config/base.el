@@ -22,6 +22,10 @@
 ;; Avoids spliting windows when opening buffer list
 (global-set-key "\C-x\C-b" 'buffer-menu)
 
+;; Movement keys
+(global-set-key "\M-n" 'forward-paragraph)
+(global-set-key "\M-p" 'backward-paragraph)
+
 ;; Useful shortcuts
 (global-set-key "\M-sr" 'replace-string)
 (global-set-key "\M-se" 'replace-regexp)
