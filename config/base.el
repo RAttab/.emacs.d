@@ -25,6 +25,10 @@
 ;; Movement keys (the true emacs way)
 (global-set-key "\M-n" 'forward-paragraph)
 (global-set-key "\M-p" 'backward-paragraph)
+(add-hook 'makefile-mode-hook 'utils/set-paragraph-keys)
+(add-hook 'Info-mode-hook 'utils/set-paragraph-keys)
+
+;; Training wheels are OFF
 (global-unset-key (kbd "<up>"))
 (global-unset-key (kbd "<C-up>"))
 (global-unset-key (kbd "<M-up>"))
