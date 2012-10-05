@@ -38,7 +38,7 @@
 ;; -----------------------------------------------------------------------------
 
 (global-set-key
- "\M-x"
+ (kbd "M-x")
  (lambda ()
    (interactive)
    (call-interactively
