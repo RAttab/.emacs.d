@@ -5,7 +5,7 @@
 ;; Load CEDET itself
 ;; -----------------------------------------------------------------------------
 
-(load-file "~/.emacs.d/vendor/cedet/common/cedet.el")
+(utils/load-vendor "cedet/common/cedet.el")
 
 (require 'semantic-gcc)
 (require 'semantic-ia)

@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/.emacs.d/vendor/lua-mode")
+(utils/add-vendor-path "lua-mode")
 
 (autoload 'lua-mode "lua-mode" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))

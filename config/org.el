@@ -6,7 +6,7 @@
 ;; -----------------------------------------------------------------------------
 
 ;; Load my org-mode version & associate with files
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/org/lisp"))
+(utils/add-vendor-path "org/lisp")
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 (require 'org-install)
 

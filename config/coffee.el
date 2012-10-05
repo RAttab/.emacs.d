@@ -11,7 +11,7 @@
 ;; Load and associate the mode
 ;; -----------------------------------------------------------------------------
 
-(add-to-list 'load-path "~/.emacs.d/vendor/defunkt-coffee-mode")
+(utils/add-vendor-path "defunkt-coffee-mode")
 (require 'coffee-mode)
 
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))

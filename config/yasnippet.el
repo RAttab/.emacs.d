@@ -8,7 +8,7 @@
 ;; Load & associate 
 ;; -----------------------------------------------------------------------------
 
-(add-to-list 'load-path "~/.emacs.d/vendor/yasnippet")
+(utils/add-vendor-path "yasnippet")
 (require 'yasnippet)
 (yas/global-mode 1)
 
