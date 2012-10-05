@@ -8,6 +8,12 @@
 		    :height 80
 		    :foreground "yellow")
 
+;; Black in a terminal ends up as an horrible gray background.
+;; The default in X is a horrible white background.
+;; I think it was designed to give you eye cancer.
+(if (eq window-system 'x)
+    (set-face-attribute 'default nil :background "black"))
+
 ;; Avoids accidental quits.
 (setq confirm-kill-emacs 'yes-or-no-p)
 
