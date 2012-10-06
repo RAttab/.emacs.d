@@ -9,7 +9,7 @@
 ;; -----------------------------------------------------------------------------
 
 ;; Dired for directory listing (same as C-xd). Avoids confusion.
-(global-set-key "\C-x\C-d" 'dired)
+(global-set-key (kbd "C-x C-d") 'dired)
 (setq dired-listing-switches "-alh")
 
 
@@ -17,8 +17,8 @@
 ;; Compilation
 ;; -----------------------------------------------------------------------------
 
-(global-set-key [f9] 'recompile)
-(global-set-key [(control f9)] 'compile)
+(global-set-key (kbd "<f9>") 'recompile)
+(global-set-key (kbd "<C-f9>") 'compile)
 (setq compilation-auto-jump-to-first-error nil)
 (setq compilation-context-lines 10)
 (setq compilation-scroll-output 'first-error)

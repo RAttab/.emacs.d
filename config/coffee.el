@@ -31,5 +31,5 @@
 ;; -----------------------------------------------------------------------------
 
 (defun my-coffee-hook ()
-  (local-set-key "\C-cc" 'coffee-compile-buffer))
+  (local-set-key (kbd "C-c c") 'coffee-compile-buffer))
 (add-hook 'coffee-mode-hook 'my-coffee-hook)

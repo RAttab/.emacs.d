@@ -16,15 +16,15 @@
 ;; -----------------------------------------------------------------------------
 
 ;; Disable the backgrounding keys (super annoying)
-(global-set-key "\C-z" nil)
-(global-set-key "\C-x\C-z" nil)
+(global-set-key (kbd "C-z") nil)
+(global-set-key (kbd "C-x C-z") nil)
 
 ;; Avoids spliting windows when opening buffer list
-(global-set-key "\C-x\C-b" 'buffer-menu)
+(global-set-key (kbd "C-x C-b") 'buffer-menu)
 
 ;; Movement keys (the true emacs way)
-(global-set-key "\M-n" 'forward-paragraph)
-(global-set-key "\M-p" 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)
+(global-set-key (kbd "M-p") 'backward-paragraph)
 (add-hook 'makefile-mode-hook 'utils/set-paragraph-keys)
 (add-hook 'Info-mode-hook 'utils/set-paragraph-keys)
 
@@ -43,14 +43,14 @@
 (global-unset-key (kbd "<M-right>"))
 
 ;; Useful shortcuts
-(global-set-key "\M-sr" 'replace-string)
-(global-set-key "\M-se" 'replace-regexp)
-(global-set-key "\M-ss" 'search-forward-regexp)
-(global-set-key "\C-c\C-c" 'comment-region)
-(global-set-key [f5] 'utils/revert-buffer-no-confirm)
+(global-set-key (kbd "M-s r") 'replace-string)
+(global-set-key (kbd "M-s e") 'replace-regexp)
+(global-set-key (kbd "M-s s") 'search-forward-regexp)
+(global-set-key (kbd "C-c C-c") 'comment-region)
+(global-set-key (kbd "<f5>") 'utils/revert-buffer-no-confirm)
 
 ;; Not quite c-hungry-delete but close enough for now.
-(global-set-key "\C-c\C-d" 'just-one-space)
+(global-set-key (kbd "C-c C-d") 'just-one-space)
 
 
 ;; -----------------------------------------------------------------------------

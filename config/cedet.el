@@ -59,22 +59,22 @@
   (setq senator-step-at-tag-classes 'function)
   (setq senator-step-at-start-end-tag-classes nil)
 
-  (local-set-key "\C-cJ" 'senator-complete-jump)
-  (local-set-key [(control tab)] 'senator-complete-symbol)
+  (local-set-key (kbd "C-c J") 'senator-c omplete-jump)
+  (local-set-key (kbd "C-tab") 'senator-c omplete-symbol)
 
-  (local-set-key "\C-c/" 'semantic-complete-analyze-inline)
-  (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle)
+  (local-set-key (kbd "C-c /") 'semantic-c omplete-analyze-inline)
+  (local-set-key (kbd "C-c p") 'semantic-analyze-proto-impl-toggle)
 
-  (local-set-key "\C-cl" 'semantic-ia-complete-symbol)
-  (local-set-key "\C-cs" 'semantic-ia-show-summary)
-  (local-set-key "\C-cd" 'semantic-ia-show-doc)
-  (local-set-key "\C-cj" 'semantic-ia-fast-jump)
+  (local-set-key (kbd "C-c l") 'semantic-ia-c omplete-symbol)
+  (local-set-key (kbd "C-c s") 'semantic-ia-show-summary)
+  (local-set-key (kbd "C-c d") 'semantic-ia-show-doc)
+  (local-set-key (kbd "C-c j") 'semantic-ia-fast-jump)
 
-  (local-set-key "\C-cr" 'semantic-symref)
-  (local-set-key "\C-cR" 'semantic-symref-symbol)
+  (local-set-key (kbd "C-c r") 'semantic-symref)
+  (local-set-key (kbd "C-c R") 'semantic-symref-symbol)
 
-  (local-set-key "\C-cf" 'eassist-list-methods)
-  (local-set-key "\C-ch" 'eassist-switch-h-cpp))
+  (local-set-key (kbd "C-c f") 'eassist-list-methods)
+  (local-set-key (kbd "C-c h") 'eassist-switch-h-c pp))
 
 (add-hook 'c-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'c++-mode-common-hook 'rattab/cedet-hook)

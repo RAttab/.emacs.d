@@ -16,9 +16,9 @@
 ;; -----------------------------------------------------------------------------
 
 (add-hook 'org-mode-hook 'turn-on-font-lock)
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
+(global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c a") 'org-agenda)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
 
 ;; Controls where the agenda will look for it's files. A directory means that all
 (setq org-agenda-files '("~/.emacs.d" "~/code" "~/org"))
@@ -79,7 +79,7 @@
 ;; -----------------------------------------------------------------------------
 
 (setq org-deault-notes-file (expand-file-name "~/org/refile.org"))
-(global-set-key "\C-cc" 'org-capture)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 (setq org-capture-templates
       '(("t" "Task" entry (file+headline "~/org/refile.org" "Refile")

@@ -39,8 +39,8 @@
 
 (defun utils/set-paragraph-keys ()
   "Sets the M-n and M-p paragraph keys localy for a given mode"
-  (local-set-key "\M-n" 'forward-paragraph)
-  (local-set-key "\M-p" 'backward-paragraph))
+  (local-set-key (kbd "M-n") 'forward-paragraph)
+  (local-set-key (kbd "M-p") 'backward-paragraph))
 
 ;; -----------------------------------------------------------------------------
 ;; Revert
