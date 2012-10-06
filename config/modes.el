@@ -2,6 +2,8 @@
 ;;
 ;; Contains mode configs too short to be placed in it's own file.
 
+(utils/add-vendor-path "misc")
+
 ;; -----------------------------------------------------------------------------
 ;; Dired-mode
 ;; -----------------------------------------------------------------------------
@@ -29,6 +31,15 @@
 (require 'whitespace)
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face tabs lines-tail))
+
+
+;; -----------------------------------------------------------------------------
+;; ispell
+;; -----------------------------------------------------------------------------
+
+(require 'iedit)
+(define-key global-map (kbd "C-;") 'iedit-mode)
+(define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
 
 
 ;; -----------------------------------------------------------------------------
