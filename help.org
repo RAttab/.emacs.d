@@ -3,21 +3,12 @@
   
 * Emacs								       :note:
 ** Emacs Help
-*** C-h m -> Mode information
-*** C-h b -> List all binded keys
-*** C-h a -> Help by topic
 *** C-h k -> What a key does
-*** C-h v [var] -> dump content and help for a variable
-*** C-h i -> Info browser
-**** C-u C-h i -> Open arbitrary info file.
-**** l -> history-back
-**** r -> history forward
 *** M-x set-variable -> Sets a variable.
 ** General
-*** M-X load-file RET ~/.emacs -> Quick config refresh (not equivalent to a reboot).
-*** M-</> -> start/end buffer
-*** M-g g -> goto-line
-*** M-g n/p -> next/prev error
+*** M-h -> mark paragraph
+*** C-x h -> mark buffer
+*** C-^ -> delete indentation
 *** C-x C-t -> transpose-line
 **** M-t -> transpose-word
 *** C-x C-o -> delete-blank-lines
@@ -25,15 +16,11 @@
 *** C-x 4 f -> find-file-other-window
 *** C-x 4 c -> clone-buffer
 *** C-x 4 0 -> kill-buffer-and-window
-*** C-u C-x C-x -> Jump to mark.
 *** C-x (/) -> start/stop macro recording
 *** C-x e -> execute macro (can be prefixed
-*** C-c C-d -> delete all white space until next non-whitespace
-*** C-x C-l/u -> down/upcase-region
 *** C-M-right/left -> forward/backward-sexp (may conflict with OS keys).
 *** C-M-a/e -> Begin/End of func
 *** M-a/e -> Begin/End of statement
-*** M-x rgrep -> grep via find
 *** Spell Check
 **** M-x flyspell-mode -> highlighter
 **** M-x flyspell-prog-mode -> comments and string only
@@ -48,18 +35,12 @@
 **** M-s o -> switch to occur mode
 ** Dired-mode
 *** ^ -> up one level
-*** x -> delete marks
-*** g -> revert-buffer
-*** R -> rename
-*** M -> chmod
-*** O -> chown
 *** o -> open in new window
 *** * % -> mark files regexp
 *** i -> Open folder in same buffer.
 *** ! -> do shell command.
 *** & -> async shell command.
 *** $ -> Toggle visibility of dir.
-*** + -> Create dir
 *** u/U -> Clear [ALL] marks
 *** = -> diff
 ** Human text stuff
@@ -70,12 +51,6 @@
 *** M-t -> swap two words.
 *** C-t -> swap two letters
 *** C-x C-t -> swap two lines
-** Buffer List
-*** d -> delete
-*** s -> save
-*** x -> Save marks
-*** ? -> help
-*** q -> quit       
 ** Frames
 *** C-x 5 2 -> Create new frame
 *** C-x 5 0/1 -> Delete this frame/all other frames
@@ -94,10 +69,6 @@
 ***** r -> Rename
 ***** d -> mark for deletion
 **** M-x bookmark-delete
-** ido-mode
-*** C-f -> Switch to normal open file
-*** C-d -> Dired for directory
-*** C-j -> Create new file.
 ** Python
 *** C-c C-z -> switch-to-python
 *** send
