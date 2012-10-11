@@ -8,7 +8,7 @@ ${1:Foo}(const $1&& other) :
 
 $1& operator=(const $1&& other)
 {
-    if (this != &other) return *this;
+    if (this == &other) return *this;
 
     $2 = std::move(other.$2);
 
