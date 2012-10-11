@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: for bounds
+# key: forb
+# --
+for (auto it = ${1:bounds}.first; it != $1.second; ++it) {
+$0
+}
