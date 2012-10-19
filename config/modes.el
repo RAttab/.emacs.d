@@ -49,6 +49,8 @@
 (setq gdb-many-windows t)
 (setq gdb-use-seperate-io-buffer nil) ;; meh, need to experiment.
 
+(add-to-list 'auto-mode-alist '("\\.gdb$" . gdb-script-mode))
+(setq gdb-script-basic-indent 4)
 
 ;; -----------------------------------------------------------------------------
 ;; Shell mode
