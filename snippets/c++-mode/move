@@ -2,11 +2,11 @@
 # name: move plumbing
 # key: move
 # --
-${1:Foo}(const $1&& other) :
-    ${2:bar}(std::move(other.$2)) $0
+${1:Foo}($1&& other) :
+    ${2:bar}(std::move(other.$2))$0
 {}
 
-$1& operator=(const $1&& other)
+$1& operator=($1&& other)
 {
     if (this == &other) return *this;
 
