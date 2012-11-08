@@ -292,6 +292,17 @@
 *** : -> run git command (careful because it'll dump EVERYTHING)
 *** d -> diff
 *** g -> refresh
+* Linux                                                                :note:
+** nm - Dump debug symbols
+** ldd - List elf dynamic dependencies
+** objdump - General dump utility for obj file
+*** -d -> dissasemble aka what gdb shows.
+*** -t -> essentially nm but with address information.
+*** -C -> demangle C++
+*** -l -> line numbers
+*** -S -> source code instead of line numbers
+*** --start-address=<...> & --stop-address=<...>
+*** -M intel -> intel disasm syntax
 * git								       :note:
 ** Commit names
 *** master@{yesterday} -> where branch was at specified date
