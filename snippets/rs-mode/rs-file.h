@@ -5,7 +5,7 @@
 # --
 /** `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
     Rémi Attab, `(format-time-string "%d %b %Y")`
-    Copyright (c) `(format-time-string "%Y")` Recoset.  All rights reserved.
+    Copyright (c) `(format-time-string "%Y")` Datacratic.  All rights reserved.
 
     ${1:Description}
 
