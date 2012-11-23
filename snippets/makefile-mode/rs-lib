@@ -1,0 +1,13 @@
+# -*- mode: snippet -*-
+# name: Complex library target
+# key: rs-lib
+# expand-env: ((yas/indent-line 'fixed))
+# --
+LIB_${1:$(upcase text)}_SOURCES := \
+        ${2:file}.cc \
+        $0
+
+LIB_${1:$(upcase text)}_LINK := \
+	${3:arch utils}
+
+$(eval $(call library,${1:foo},$(LIB_${1:$(upcase text)}_SOURCES),$(LIB_${1:$(upcase text)}_LINK)))

@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Simple library target
+# key: rs-slib
+# expand-env: ((yas/indent-line 'fixed))
+# --
+$(eval $(call library,${1:foo},${2:file.cc},${3:arch utils}))
+$0

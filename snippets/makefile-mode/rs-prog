@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Program target
+# key: rs-prog
+# expand-env: ((yas/indent-line 'fixed))
+# --
+$(eval $(call program,${1:foo_runner},${2:foo_dep}))
+$0

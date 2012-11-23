@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: C++ test target
+# key: rs-test
+# expand-env: ((yas/indent-line 'fixed))
+# --
+$(eval $(call test,${1:foo_test},${2:deps},${3:boost manual timed}))
+$0
