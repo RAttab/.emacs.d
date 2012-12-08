@@ -44,3 +44,12 @@
    (call-interactively
     (intern
      (ido-completing-read "M-x " (all-completions "" obarray 'commandp))))))
+
+
+(global-set-key
+ (kbd "C-h f")
+ (lambda ()
+   (interactive)
+   (describe-function
+    (intern
+     (ido-completing-read "Describe function: " (all-completions "" obarray 'commandp))))))
