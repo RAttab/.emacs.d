@@ -35,6 +35,7 @@ yasnippet:
 	cd vendor && tar xf yasnippet-$(YASNIPPET_VER).tar
 	-rm vendor/yasnippet
 	cd vendor && ln -s yasnippet-$(YASNIPPET_VER) yasnippet
+	cd vendor/yasnippet && rm -rf snippets # Default snippets have precendence so get rid of them.
 
 lua-mode:
 	-rm -rf vendor/immerrr-lua-mode-$(LUA_VER)

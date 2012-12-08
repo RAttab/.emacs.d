@@ -3,5 +3,5 @@
 # key: rs-prog
 # expand-env: ((yas/indent-line 'fixed))
 # --
-$(eval $(call program,${1:foo_runner},${2:foo_dep}))
+$(eval $(call program,${1:foo_runner},${2:foo boost_program_options}))
 $0
