@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: h
+# key: header
+# expand-env: ((yas/indent-line 'fixed))
+# --
+/** `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
+    Rémi Attab (remi.attab@gmail.com), `(format-time-string "%d %b %Y")`
+    FreeBSD-style copyright and disclaimer apply
+
+    ${1:Description}
+
+*/
+
+#ifndef __${2:lib}__${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}_h__
+#define __$2__$3_h__
+
+namespace ${4:ns} {
+$0
+} // $4
+
+#endif // __$2__$3_h__
