@@ -1,0 +1,57 @@
+# -*- mode: snippet -*-
+# name: check
+# key: header
+# expand-env: ((yas/indent-line 'fixed))
+# --
+/* `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
+   Rémi Attab (remi.attab@gmail.com), `(format-time-string "%d %b %Y")`
+   FreeBSD-style copyright and disclaimer apply
+
+   ${1:Description}
+
+*/
+
+#include <check.h>
+
+using namespace std;
+using namespace ${2:ns};
+
+/******************************************************************************/
+/* TEST CASES                                                                 */
+/******************************************************************************/
+
+START_TEST(${3:test}Test)
+{
+    $0
+}
+END_TEST
+
+
+/******************************************************************************/
+/* RUNNER                                                                     */
+/******************************************************************************/
+
+Suite* ${4:suite}Suite ()
+{
+    Suite* suite = suite_create("$4");
+
+    TCase* $3Case = tcase_create("$3");
+    // tcase_add_checked_fixture($3Case, setup, teardown);
+    tcase_set_timeout($3Case, 1000000);
+    tcase_add_test($3Case, $3Test);
+
+    suite_add_tcase(suite, $3Case);
+    return suite;
+}
+
+
+void main(int argc, char** argv)
+{
+    SRunner* runner = srunner_create($4());
+    // srunner_set_fork_status(runner, CK_NOFORK);
+
+    int errors = srunner_ntests_failed(runner);
+    srunner_free(runner);
+
+    return errors ? EXIT_FAILURE : EXIT_SUCCESS;
+}

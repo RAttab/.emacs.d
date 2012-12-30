@@ -1,5 +1,5 @@
 # -*- mode: snippet -*-
-# name: tcc
+# name: cpp
 # key: header
 # expand-env: ((yas/indent-line 'fixed))
 # --
@@ -10,6 +10,8 @@
    ${1:Description}
 
 */
+
+#include "`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.h"
 
 namespace ${4:ns} {
 $0
