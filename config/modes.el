@@ -49,6 +49,13 @@
 (add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
 
+(defun my-cmake-hook ()
+  (whitespace-mode t)
+  (setq fill-column 80)
+  (setq indent-tabs-mode nil)
+  (setq cmake-tab-width 4))
+(add-hook 'cmake-mode-hook 'my-cmake-hook)
+
 ;; -----------------------------------------------------------------------------
 ;; gdb
 ;; -----------------------------------------------------------------------------
