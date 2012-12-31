@@ -41,9 +41,16 @@
 (define-key global-map (kbd "C-;") 'iedit-mode)
 (define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
 
+;; -----------------------------------------------------------------------------
+;; cmake-mode
+;; -----------------------------------------------------------------------------
+
+(require 'cmake-mode)
+(add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
+(add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
 
 ;; -----------------------------------------------------------------------------
-;; GDB
+;; gdb
 ;; -----------------------------------------------------------------------------
 
 (setq gdb-many-windows t)
