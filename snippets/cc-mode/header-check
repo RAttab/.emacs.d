@@ -45,7 +45,7 @@ Suite* ${4:suite}Suite ()
 }
 
 
-void main(int argc, char** argv)
+int main(int argc, char** argv)
 {
     SRunner* runner = srunner_create($4());
     // srunner_set_fork_status(runner, CK_NOFORK);
