@@ -8,7 +8,6 @@
    FreeBSD-style copyright and disclaimer apply
 
    ${1:Description}
-
 */
 
 #define BOOST_TEST_MAIN

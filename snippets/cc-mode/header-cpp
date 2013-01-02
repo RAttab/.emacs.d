@@ -8,7 +8,6 @@
    FreeBSD-style copyright and disclaimer apply
 
    ${1:Description}
-
 */
 
 #include "`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.h"

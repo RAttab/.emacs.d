@@ -8,7 +8,6 @@
    FreeBSD-style copyright and disclaimer apply
 
    ${1:Description}
-
 */
 
 #ifndef __${2:lib}__${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}_h__
