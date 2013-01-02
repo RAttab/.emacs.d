@@ -18,7 +18,7 @@
 
 using namespace std;
 
-BOOST_AUTO_TEST_CASE( ${2:test_something} )
+BOOST_AUTO_TEST_CASE(${2:test_something})
 {
 $0
 }
