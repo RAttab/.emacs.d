@@ -2,6 +2,6 @@
 # name: Delete move constructor and operator
 # key: nomove
 # --
-${1:Foo}(const $1&& other) = delete;
-$1& operator=(const $1&& other) = delete;
+${1:Foo}($1&&) = delete;
+$1& operator=($1&&) = delete;
 $0
