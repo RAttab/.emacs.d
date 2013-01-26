@@ -102,3 +102,11 @@
 
 (add-hook 'c-mode-hook 'utils/c-hook)
 (add-hook 'c++-mode-hook 'utils/c-hook)
+
+
+;; -----------------------------------------------------------------------------
+;; Java hook
+;; -----------------------------------------------------------------------------
+
+(defun utils/java-hook () (utils/c-general-load))
+(add-hook 'java-mode-hook 'utils/c-general-load)
