@@ -57,7 +57,9 @@
 (global-set-key (kbd "<f5>") 'utils/revert-buffer-no-confirm)
 
 ;; Not quite c-hungry-delete but close enough for now.
-(global-set-key (kbd "C-c C-d") 'just-one-space)
+;; (global-set-key (kbd "C-c C-d") 'just-one-space)
+(global-set-key (kbd "C-c C-n") 'utils/join-line-down)
+(global-set-key (kbd "C-c C-p") 'delete-indentation)
 
 
 ;; -----------------------------------------------------------------------------

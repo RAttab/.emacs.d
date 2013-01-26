@@ -76,8 +76,12 @@
   (local-set-key (kbd "C-c R") 'semantic-symref-symbol)
 
   (local-set-key (kbd "C-c f") 'eassist-list-methods)
-  (local-set-key (kbd "C-c h") 'eassist-switch-h-cpp))
+  (local-set-key (kbd "C-c h") 'eassist-switch-h-cpp)
+
+  (local-set-key (kbd "C-c C-n") 'utils/join-line-down)
+  (local-set-key (kbd "C-c C-p") 'delete-indentation))
 
 (add-hook 'c-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'c++-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'python-mode-hook 'rattab/cedet-hook)
+(add-hook 'java-mode-hook 'rattab/cedet-hook)

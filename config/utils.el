@@ -32,6 +32,15 @@
   "Adds a vendor path to the load path ~/.emacs.d/vendor"
   (add-to-list 'load-path (expand-file-name (concat utils/vendor-path path))))
 
+;; -----------------------------------------------------------------------------
+;; Join Line
+;; -----------------------------------------------------------------------------
+
+(defun utils/join-line-down ()
+  "See the join-line doc"
+  (interactive)
+  (join-line -1))
+
 
 ;; -----------------------------------------------------------------------------
 ;; Paragraph keys
