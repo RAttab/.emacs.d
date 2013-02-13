@@ -16,8 +16,8 @@
 using namespace std;
 using namespace ML;
 
-namespace Recoset {
+namespace Datacratic {
 
 $0
 
-} // namepsace Recoset
+} // namepsace Datacratic

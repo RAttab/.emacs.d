@@ -25,10 +25,10 @@ using namespace v8;
 using namespace node;
 
 
-namespace Recoset {
+namespace Datacratic {
 namespace JS {
 
 $0
 
 } // namepsace JS
-} // namespace Recoset
+} // namespace Datacratic
