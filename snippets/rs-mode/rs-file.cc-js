@@ -13,12 +13,11 @@
 
 
 #include "`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.h"
-#include "js/js_wrapped.h"
-#include "js/js_call.h"
-#include "js/js_utils.h"
-#include "js/js_registry.h"
-#include "sigslot/slot.h"
-#include "jml/utils/smart_ptr_utils.h"
+#include "soa/js/js_wrapped.h"
+#include "soa/js/js_call.h"
+#include "soa/js/js_utils.h"
+#include "soa/js/js_registry.h"
+#include "soa/sigslot/slot.h"
 
 using namespace std;
 using namespace v8;

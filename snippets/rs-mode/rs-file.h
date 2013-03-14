@@ -11,13 +11,10 @@
 
 */
 
-#ifndef __${2:mmap}__${3:`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`}_h__
-#define __$2__$3_h__
+#pragma once
 
-namespace Datacratic {
+namespace ${4:Datacratic} {
 
 $0
 
-} // Datacratic
-
-#endif // __$2__$3_h__
+} // namespace $4

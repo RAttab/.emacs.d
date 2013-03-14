@@ -17,8 +17,8 @@ struct $2JS :
 
     $2JS(
             v8::Handle<v8::Object> This,
-            const boost::shared_ptr<$2>& ${4:foo} =
-                boost::shared_ptr<$2>())
+            const std::shared_ptr<$2>& ${4:foo} =
+                std::shared_ptr<$2>())
     {
         HandleScope scope;
         wrap(This, $4);
@@ -65,40 +65,18 @@ struct $2JS :
     */
 };
 
-boost::shared_ptr<$2>
-from_js(const JSValue& value, boost::shared_ptr<$2>*)
+$2 from_js(const JSValue& value, $2*)
 {
-    return $2JS::fromJS(value);
+    return *$2JS::fromJS(value);
 }
 
-boost::shared_ptr<$2>
-from_js_ref(const JSValue& value, boost::shared_ptr<$2>*)
-{
-    return $2JS::fromJS(value);
-}
-
-$2*
-from_js(const JSValue& value, $2**)
+$2* from_js(const JSValue& value, $2**)
 {
     return $2JS::fromJS(value).get();
 }
 
-void
-to_js(JS::JSValue& value, const boost::shared_ptr<$2>& $4)
+void to_js(JS::JSValue& value, const $2& $4)
 {
-    value = $2JS::toJS($4);
-}
-
-boost::shared_ptr<$2>
-get$2SharedPointer(const JS::JSValue & value)
-{
-    if($2JS::tmpl->HasInstance(value))
-    {
-        boost::shared_ptr<$2> $4 =
-            $2JS::getSharedPtr(value);
-        return $4;
-    }
-    boost::shared_ptr<$2> $4;
-    return $4;
+    value = $2JS::toJS(std::make_shared<$2>($4));
 }
 

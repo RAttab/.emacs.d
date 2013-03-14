@@ -16,8 +16,8 @@
 using namespace std;
 using namespace ML;
 
-namespace Datacratic {
+namespace ${2:Datacratic} {
 
 $0
 
-} // namepsace Datacratic
+} // namepsace $2
