@@ -50,9 +50,7 @@
 (add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
 
 (defun my-cmake-hook ()
-  (whitespace-mode t)
-  (setq fill-column 80)
-  (setq indent-tabs-mode nil)
+  (utils/setup-indent)
   (setq cmake-tab-width 4))
 (add-hook 'cmake-mode-hook 'my-cmake-hook)
 
@@ -69,6 +67,7 @@
 
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(add-hook 'markdown-mode-hook 'utils/setup-indent)
 
 ;; -----------------------------------------------------------------------------
 ;; gdb
