@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: main
+# key: header
+# expand-env: ((yas/indent-line 'fixed))
+# --
+/* `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
+   Rémi Attab (remi.attab@gmail.com), `(format-time-string "%d %b %Y")`
+   FreeBSD-style copyright and disclaimer apply
+
+   ${1:Description}
+*/
+
+using namespace std;
+
+
+/******************************************************************************/
+/* MAIN                                                                       */
+/******************************************************************************/
+
+int main(int argc, char** argv)
+{
+
+}
