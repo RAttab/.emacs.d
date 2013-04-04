@@ -67,8 +67,11 @@
 
 (autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-(add-hook 'markdown-mode-hook 'utils/setup-indent)
-(add-hook 'markdown-mode-hook 'utils/set-paragraph-keys)
+(defun my-markdown-hook ()
+  (setq fill-column 80)
+  (visual-line-mode)
+  (utils/set-paragraph-keys))
+(add-hook 'markdown-mode-hook 'my-markdown-hook)
 
 ;; -----------------------------------------------------------------------------
 ;; gdb
