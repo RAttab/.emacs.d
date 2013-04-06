@@ -82,6 +82,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.gdb$" . gdb-script-mode))
 (setq gdb-script-basic-indent 4)
+(add-hook 'gdb-script-mode-hook 'utils/setup-indent)
 
 ;; -----------------------------------------------------------------------------
 ;; Shell mode
