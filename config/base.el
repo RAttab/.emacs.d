@@ -73,6 +73,7 @@
 (utils/load-config "yasnippet.el")
 (utils/load-config "magit.el")
 (utils/load-config "org.el")
+(utils/load-config "term.el")
 
 ;; C/C++
 (utils/load-config "style.el")
