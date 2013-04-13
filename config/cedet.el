@@ -67,8 +67,10 @@
   (local-set-key (kbd "C-c /") 'semantic-complete-analyze-inline)
   (local-set-key (kbd "C-c p") 'semantic-analyze-proto-impl-toggle)
 
-  (local-set-key (kbd "C-c l") 'semantic-ia-complete-symbol)
-  (local-set-key (kbd "C-c s") 'semantic-ia-show-summary)
+;; conflicts with magit keys.
+;;  (local-set-key (kbd "C-c l") 'semantic-ia-complete-symbol)
+;;  (local-set-key (kbd "C-c s") 'semantic-ia-show-summary)
+
   (local-set-key (kbd "C-c d") 'semantic-ia-show-doc)
   (local-set-key (kbd "C-c j") 'semantic-ia-fast-jump)
 
