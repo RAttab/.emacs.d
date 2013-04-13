@@ -10,11 +10,7 @@
 ;; Should be changed in the local.el file.
 (setq utils/enable-cedet t)
 
-
-;; -----------------------------------------------------------------------------
-;; Disable training wheels.
-;; -----------------------------------------------------------------------------
-
+;; Disable annoying training wheel warning.
 (put 'narrow-to-region 'disabled nil)
 
 
