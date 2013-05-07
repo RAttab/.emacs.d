@@ -69,11 +69,11 @@
 (utils/load-config-if-exists "local.el")
 
 ;; Useful modes
+(utils/load-config "org.el") ;; Has tons of global keys so make sure it goes first.
 (utils/load-config "modes.el")
 (utils/load-config "ido.el")
 (utils/load-config "yasnippet.el")
 (utils/load-config "magit.el")
-(utils/load-config "org.el")
 (utils/load-config "term.el")
 
 ;; C/C++
