@@ -47,8 +47,6 @@
 
 (require 'disaster)
 
-
-
 (defun utils/disaster-hook ()
   (setq disaster-cflags "-O3 -Werror -Wall -Wextra -pedantic")
   (setq disaster-cxxflags "-O3 -std=c++11 -Werror -Wall -Wextra -pedantic")
