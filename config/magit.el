@@ -5,6 +5,7 @@
 (utils/add-vendor-path "magit")
 (require 'magit)
 (require 'magit-svn)
+(require 'magit-blame)
 
 ;; -----------------------------------------------------------------------------
 ;; key bindings
