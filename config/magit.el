@@ -11,9 +11,18 @@
 ;; key bindings
 ;; -----------------------------------------------------------------------------
 
+(setq magit-commit-all-when-nothing-staged 'nil)
+(setq magit-completing-read-function 'magit-ido-completing-read)
+
 (global-set-key (kbd "C-c s") 'magit-status)
 (global-set-key (kbd "C-c l") 'magit-file-log)
 
 (add-hook 'magit-log-mode-hook
 	  '(lambda ()
 	     (local-set-key (kbd "S") 'magit-show-file-revision)))
+
+(add-hook 'magit-log-edit-mode-hook
+	  '(lambda ()
+	     (setq fill-column 70)
+	     (auto-fill-mode 1)))
+
