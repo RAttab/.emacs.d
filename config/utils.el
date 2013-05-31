@@ -64,6 +64,16 @@
 
 
 ;; -----------------------------------------------------------------------------
+;; Autofill
+;; -----------------------------------------------------------------------------
+
+(defun utils/enable-auto-fill (col comments)
+  (setq fill-column col)
+  (set (make-local-variable 'comment-auto-fill-only-comments) comments)
+  (auto-fill-mode 1))
+
+
+;; -----------------------------------------------------------------------------
 ;; Revert
 ;; -----------------------------------------------------------------------------
 
@@ -82,16 +92,6 @@
 (defun utils/revert-buffer-no-confirm ()
   "Revert buffer without confirmation."
   (interactive) (revert-buffer t t))
-
-
-;; -----------------------------------------------------------------------------
-;; Autofill
-;; -----------------------------------------------------------------------------
-
-(defun utils/enable-auto-fill (col comments)
-  (setq fill-column col)
-  (set (make-local-variable 'comment-auto-fill-only-comments) comments)
-  (auto-fill-mode 1))
 
 
 ;; -----------------------------------------------------------------------------
