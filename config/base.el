@@ -1,4 +1,10 @@
-;; Entry point for my emacs config.
+;; -----------------------------------------------------------------------------
+;; base.el
+;; Rémi Attab (remi.attab@gmail.com), 01 Jun 2013
+;; FreeBSD-style copyright and disclaimer apply
+;;
+;; Entry point for my config.
+;; -----------------------------------------------------------------------------
 
 ;; -----------------------------------------------------------------------------
 ;; Utilities
@@ -82,6 +88,7 @@
 (if utils/enable-cedet (utils/load-config-if-exists "project.el"))
 
 ;; Other languages
+(utils/load-config "elisp.el")
 (utils/load-config "coffee.el")
 (utils/load-config "python.el")
 (utils/load-config "lua.el")
