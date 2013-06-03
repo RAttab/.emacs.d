@@ -12,4 +12,9 @@
 
 (autoload 'enable-paredit-mode
   "paredit" "Turn on pseudo-structural editing of Lisp code." t)
-(add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
+
+(add-hook 'emacs-lisp-mode-hook
+	  (lambda ()
+	    (enable-paredit-mode)
+	    ;; Paredit overwrites M-s AND M-S... that's just greedy...
+	    (local-set-key (kbd "M-s o") 'occur)))
