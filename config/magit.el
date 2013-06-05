@@ -16,6 +16,7 @@
 
 (global-set-key (kbd "C-c s") 'magit-status)
 (global-set-key (kbd "C-c l") 'magit-file-log)
+(global-set-key (kbd "C-c b") 'magit-blame-mode)
 
 (add-hook 'magit-log-mode-hook
 	  '(lambda ()
