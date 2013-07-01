@@ -65,7 +65,7 @@
 (global-set-key (kbd "C-c C-n") 'utils/join-line-down)
 (global-set-key (kbd "C-c C-p") 'delete-indentation)
 
-(global-set-key (kbd "C-c C-a") 'calc)
+(global-set-key (kbd "C-c u") 'calc)
 (global-set-key (kbd "C-c m") 'man)
 
 
