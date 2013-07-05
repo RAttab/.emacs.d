@@ -45,11 +45,18 @@
     (intern
      (ido-completing-read "M-x " (all-completions "" obarray 'commandp))))))
 
+(defun utils/ido-function-prompt (prompt pred)
+  (describe-function
+   (intern (ido-completing-read prompt (all-completions "" obarray pred)))))
 
 (global-set-key
  (kbd "C-h f")
  (lambda ()
    (interactive)
-   (describe-function
-    (intern
-     (ido-completing-read "Describe function: " (all-completions "" obarray 'commandp))))))
+   (utils/ido-function-prompt "Describe command: " 'commandp)))
+
+(global-set-key
+ (kbd "C-h F")
+ (lambda ()
+   (interactive)
+   (utils/ido-function-prompt "Describe function: " 'fboundp)))
