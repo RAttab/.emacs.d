@@ -59,6 +59,7 @@
 (global-set-key (kbd "<f5>") 'utils/revert-buffer-no-confirm)
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
 (global-set-key (kbd "C-c w") 'delete-trailing-whitespace)
+(global-set-key (kbd "C-x f") 'find-name-dired)
 
 ;; Not quite c-hungry-delete but close enough for now.
 ;; (global-set-key (kbd "C-c C-d") 'just-one-space)
