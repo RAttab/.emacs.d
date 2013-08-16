@@ -1,0 +1,21 @@
+# -*- mode: snippet -*-
+# name: cc-main
+# key: rs-file
+# expand-env: ((yas/indent-line 'fixed))
+# --
+/** `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
+    Rémi Attab, `(format-time-string "%d %b %Y")`
+    Copyright (c) `(format-time-string "%Y")` Datacratic.  All rights reserved.
+
+    ${1:Description}
+
+*/
+
+using namespace std;
+using namespace ML;
+using namespace Datacratic;
+
+int main(int argc, char* argv[])
+{
+$0
+}
