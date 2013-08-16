@@ -69,6 +69,9 @@
 (global-set-key (kbd "C-c u") 'calc)
 (global-set-key (kbd "C-c m") 'man)
 
+(global-set-key (kbd "<f8>") 'flyspell-mode)
+(global-set-key (kbd "C-<f8>") 'flyspell-buffer)
+
 
 ;; -----------------------------------------------------------------------------
 ;; Load rest of configs
