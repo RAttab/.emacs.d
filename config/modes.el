@@ -41,18 +41,6 @@
 (define-key global-map (kbd "C-;") 'iedit-mode)
 (define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
 
-;; -----------------------------------------------------------------------------
-;; disaster
-;; -----------------------------------------------------------------------------
-
-(require 'disaster)
-
-(defun utils/disaster-hook ()
-  (setq disaster-cflags "-O3 -Werror -Wall -Wextra -pedantic")
-  (setq disaster-cxxflags "-O3 -std=c++11 -Werror -Wall -Wextra -pedantic")
-  (local-set-key (kbd "C-c C-d") 'disaster))
-(add-hook 'c-mode-common-hook 'utils/disaster-hook)
-
 
 ;; -----------------------------------------------------------------------------
 ;; cmake-mode
