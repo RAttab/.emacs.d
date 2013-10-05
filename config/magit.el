@@ -19,11 +19,11 @@
 (global-set-key (kbd "C-c b") 'magit-blame-mode)
 
 (add-hook 'magit-log-mode-hook
-	  '(lambda ()
-	     (local-set-key (kbd "S") 'magit-show-file-revision)))
+          '(lambda ()
+             (local-set-key (kbd "S") 'magit-show-file-revision)))
 
 (add-hook 'magit-log-edit-mode-hook
-	  '(lambda ()
-	     (setq fill-column 70)
-	     (auto-fill-mode 1)))
+          '(lambda ()
+             (setq fill-column 70)
+             (auto-fill-mode 1)))
 
