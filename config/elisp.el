@@ -13,8 +13,15 @@
 (autoload 'enable-paredit-mode
   "paredit" "Turn on pseudo-structural editing of Lisp code." t)
 
-(add-hook 'emacs-lisp-mode-hook
-	  (lambda ()
-	    (enable-paredit-mode)
-	    ;; Paredit overwrites M-s AND M-S... that's just greedy...
-	    (local-set-key (kbd "M-s o") 'occur)))
+(defun utils/elisp-mode-hook ()
+  (whitespace-mode t)
+  (setq show-trailing-whitespace nil)
+  (setq fill-column 80)
+  (setq indent-tabs-mode nil)
+
+  (enable-paredit-mode)
+  (local-set-key (kbd "C-c C-b") 'eval-buffer)
+  ;; Paredit overwrites M-s AND M-S... that's just greedy...
+  (define-key paredit-mode-map (kbd "M-s") nil))
+
+(add-hook 'emacs-lisp-mode-hook 'utils/elisp-mode-hook)
