@@ -71,7 +71,7 @@
 ;;  (local-set-key (kbd "C-c l") 'semantic-ia-complete-symbol)
 ;;  (local-set-key (kbd "C-c s") 'semantic-ia-show-summary)
 
-  (local-set-key (kbd "C-c d") 'semantic-ia-show-doc)
+;;  (local-set-key (kbd "C-c d") 'semantic-ia-show-doc)
   (local-set-key (kbd "C-c j") 'semantic-ia-fast-jump)
 
   (local-set-key (kbd "C-c r") 'semantic-symref)
