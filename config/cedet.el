@@ -81,7 +81,12 @@
   (local-set-key (kbd "C-c h") 'eassist-switch-h-cpp)
 
   (local-set-key (kbd "C-c C-n") 'utils/join-line-down)
-  (local-set-key (kbd "C-c C-p") 'delete-indentation))
+  (local-set-key (kbd "C-c C-p") 'delete-indentation)
+
+   ;; Conflicts with iasm-mode's kind bind.
+  (local-set-key (kbd "C-c C-d") nil)
+  (local-set-key (kbd "C-c C-l") nil)
+  )
 
 (add-hook 'c-mode-common-hook 'rattab/cedet-hook)
 (add-hook 'c++-mode-common-hook 'rattab/cedet-hook)
