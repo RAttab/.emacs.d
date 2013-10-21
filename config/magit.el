@@ -6,6 +6,7 @@
 (require 'magit)
 (require 'magit-svn)
 (require 'magit-blame)
+(require 'magit-find-file)
 
 ;; -----------------------------------------------------------------------------
 ;; key bindings
@@ -17,6 +18,7 @@
 (global-set-key (kbd "C-c s") 'magit-status)
 (global-set-key (kbd "C-c l") 'magit-file-log)
 (global-set-key (kbd "C-c b") 'magit-blame-mode)
+(global-set-key (kbd "C-x f") 'magit-find-file-completing-read)
 
 (add-hook 'magit-log-mode-hook
           '(lambda ()
