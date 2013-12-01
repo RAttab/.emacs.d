@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Default move constructor and operator
+# key: defmove
+# --
+${1:Foo}($1&&) = default;
+$1& operator=($1&&) = default;
+$0

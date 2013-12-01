@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Default copy constructor and operator
+# key: defcopy
+# --
+${1:Foo}(const $1&) = default;
+$1& operator=(const $1&) = default;
+$0
