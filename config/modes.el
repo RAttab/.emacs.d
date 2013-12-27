@@ -114,3 +114,12 @@
  (lambda ()
    (local-set-key (kbd "C-c d") 'iasm-goto-disasm-buffer)
    (local-set-key (kbd "C-c l") 'iasm-disasm-link-buffer)))
+
+;; -----------------------------------------------------------------------------
+;; uniquify
+;; -----------------------------------------------------------------------------
+
+(require 'uniquify)
+
+(setq uniquify-buffer-name-style 'post-forward)
+(setq uniquify-strip-common-suffix t)
