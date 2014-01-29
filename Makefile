@@ -3,6 +3,7 @@ ORG_VER=7.8.08
 MAGIT_VER=1.2.0
 YASNIPPET_VER=0.7.0
 LUA_VER=66cd58a
+COLOR_THEME_VER=6.6.0
 
 MAKEINFO=makeinfo # replace with echo if makeinfo isn't available.
 CORES=2
@@ -44,7 +45,14 @@ lua-mode:
 	-rm vendor/lua-mode
 	cd vendor && ln -s immerrr-lua-mode-$(LUA_VER) lua-mode
 
+
+color-theme:
+	-rm -rf vendor/color-theme-$(COLOR_THEME_VER)
+	cd vendor && tar xzf color-theme-$(COLOR_THEME_VER).tar.gz
+	-rm vendor/color-theme
+	cd vendor && ln -s color-theme-$(COLOR_THEME_VER) color-theme
+
 init-file:
 	ln -s ~/.emacs.d/.emacs ~/.emacs
 
-.PHONY: cedet org magit yasnippet
+.PHONY: cedet org magit yasnippet color-theme
