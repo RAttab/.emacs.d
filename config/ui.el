@@ -5,7 +5,6 @@
 
 (set-face-attribute 'default nil :height 80)
 
-
 ;; Black in a terminal ends up as an horrible gray background.
 ;; The default in X is a horrible white background.
 ;; I think it was designed to give you eye cancer.
