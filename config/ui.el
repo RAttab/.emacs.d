@@ -7,6 +7,9 @@
 ;; color-theme
 ;; -----------------------------------------------------------------------------
 
+;; Only defined in emacs 24 so shim it in for now.
+(defvar custom-theme-load-path nil)
+
 (utils/add-vendor-path "color-theme")
 (utils/add-vendor-path "themes")
 (require 'color-theme)
