@@ -3,13 +3,19 @@
 ;; For non-mode specific tweaks.
 
 
-(set-face-attribute 'default nil :height 80)
+;; -----------------------------------------------------------------------------
+;; color-theme
+;; -----------------------------------------------------------------------------
 
-;; Black in a terminal ends up as an horrible gray background.
-;; The default in X is a horrible white background.
-;; I think it was designed to give you eye cancer.
-(if (eq window-system 'x)
-    (set-face-attribute 'default nil :background "black"))
+(utils/add-vendor-path "color-theme")
+(utils/add-vendor-path "themes")
+(require 'color-theme)
+(if (eq window-system 'x) (load-theme 'brin) (load-theme 'junio))
+
+
+;; -----------------------------------------------------------------------------
+;; misc
+;; -----------------------------------------------------------------------------
 
 ;; Avoids accidental quits.
 (setq confirm-kill-emacs 'yes-or-no-p)

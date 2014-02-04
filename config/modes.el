@@ -4,20 +4,6 @@
 
 (utils/add-vendor-path "misc")
 
-;; -----------------------------------------------------------------------------
-;; color-theme
-;; -----------------------------------------------------------------------------
-
-(utils/add-vendor-path "color-theme")
-(require 'color-theme)
-
-(utils/add-vendor-path "solarized")
-(require 'color-theme-solarized)
-
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-solarized-dark)))
 
 ;; -----------------------------------------------------------------------------
 ;; Dired-mode
