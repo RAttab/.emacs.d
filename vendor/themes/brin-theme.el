@@ -26,27 +26,27 @@
     'brin
     '(linum-format " %5i "))
 
-  (let ((background "#11141c")
-        (gutters    "#343d46")
-        (gutter-fg  "#65737e")
+  (let ((background     "#11141c")
+        (gutters        "#343d46")
+        (gutter-fg      "#65737e")
         (gutters-active "#4f5b66")
-        (builtin      "#d08770")
-        (foreground "#c0c5ce")
-        (invisibles "#65737e")
-        (lineHighlight "#343d46")
-        (selection  "#4f5b66")
-        (text       "#c0c5ce")
-        (comments   "#65737e")
-        (punctuation "#c0c5ce")
-        (delimiters "#c0c5ce")
-        (operators "#c0c5ce")
-        (keywords "#b48ead")
-        (variables "#bf616a")
-        (functions "#8fa1b3")
-        (methods    "#8fa1b3")
-        (strings    "#a3be8c")
-        (constants "#d08770")
-        (white     "#ffffff"))
+        (builtin        "#d08770")
+        (foreground     "#c0c5ce")
+        (invisibles     "#65737e")
+        (lineHighlight  "#343d46")
+        (selection      "#4f5b66")
+        (text           "#c0c5ce")
+        (comments       "#65737e")
+        (punctuation    "#c0c5ce")
+        (delimiters     "#c0c5ce")
+        (operators      "#c0c5ce")
+        (keywords       "#b48ead")
+        (variables      "#bf616a")
+        (functions      "#8fa1b3")
+        (methods        "#8fa1b3")
+        (strings        "#a3be8c")
+        (constants      "#d08770")
+        (white          "#ffffff"))
 
   (custom-theme-set-faces
    'brin
@@ -75,6 +75,11 @@
    `(font-lock-comment-delimiter-face ((t (:foreground ,delimiters))))
    `(font-lock-function-name-face     ((t (:foreground ,functions))))
    `(font-lock-doc-string-face        ((t (:foreground ,strings)))))
+
+;; magit
+;; *****************************************************************************************
+
+  `(magit-item-highlight                           ((t (:background ,selection))))
 
 ;; *****************************************************************************************
 
