@@ -67,18 +67,20 @@
   (local-set-key (kbd "C-c /") 'semantic-complete-analyze-inline)
   (local-set-key (kbd "C-c p") 'semantic-analyze-proto-impl-toggle)
 
-;; conflicts with magit keys.
-;;  (local-set-key (kbd "C-c l") 'semantic-ia-complete-symbol)
-;;  (local-set-key (kbd "C-c s") 'semantic-ia-show-summary)
+  ;; conflicts with magit keys.
+  ;; (local-set-key (kbd "C-c l") 'semantic-ia-complete-symbol)
+  ;; (local-set-key (kbd "C-c s") 'semantic-ia-show-summary)
 
-;;  (local-set-key (kbd "C-c d") 'semantic-ia-show-doc)
+  ;; (local-set-key (kbd "C-c d") 'semantic-ia-show-doc)
   (local-set-key (kbd "C-c j") 'semantic-ia-fast-jump)
 
   (local-set-key (kbd "C-c r") 'semantic-symref)
   (local-set-key (kbd "C-c R") 'semantic-symref-symbol)
 
   (local-set-key (kbd "C-c f") 'eassist-list-methods)
-  (local-set-key (kbd "C-c h") 'eassist-switch-h-cpp)
+
+  ;; using ff-find-other-file which is more consistent.
+  ;; (local-set-key (kbd "C-c h") 'eassist-switch-h-cpp)
 
   (local-set-key (kbd "C-c C-n") 'utils/join-line-down)
   (local-set-key (kbd "C-c C-p") 'delete-indentation)

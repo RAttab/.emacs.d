@@ -72,6 +72,8 @@
 (global-set-key (kbd "<f8>") 'flyspell-mode)
 (global-set-key (kbd "C-<f8>") 'flyspell-buffer)
 
+(global-set-key (kbd "C-c h") 'ff-find-other-file)
+
 
 ;; -----------------------------------------------------------------------------
 ;; Load rest of configs
