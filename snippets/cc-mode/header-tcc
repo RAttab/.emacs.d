@@ -12,4 +12,4 @@
 
 namespace ${4:ns} {
 $0
-} // $4
+} // namespace $4
