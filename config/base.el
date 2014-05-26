@@ -100,6 +100,6 @@
 (utils/load-config "elisp.el")
 (utils/load-config "coffee.el")
 (utils/load-config "python.el")
-(when (file-exists-p "/usr/local/go/misc/emacs")(utils/load-config "go.el"))
+(utils/load-config "go.el")
 (utils/load-config "lua.el")
 (utils/load-config "octave.el")
