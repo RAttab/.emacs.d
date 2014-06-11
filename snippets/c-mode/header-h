@@ -3,7 +3,7 @@
 # key: header
 # expand-env: ((yas/indent-line 'fixed))
 # --
-/* `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
+/* `(file-name-nondirectory (buffer-file-name))`
    Rémi Attab (remi.attab@gmail.com), `(format-time-string "%d %b %Y")`
    FreeBSD-style copyright and disclaimer apply
 
@@ -12,6 +12,4 @@
 
 #pragma once
 
-namespace ${4:ns} {
 $0
-} // namespace $4
