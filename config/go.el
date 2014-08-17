@@ -22,10 +22,13 @@
 
 (defun utils/go-mode-hook ()
   (setq tab-width 4)
+  (setq fill-column 80)
   ;; (add-hook 'before-save-hook 'gofmt-before-save) ;; Super annoying.
   (local-set-key (kbd "C-c C-f") 'gofmt)
   (local-set-key (kbd "C-c C-r") 'go-remove-unused-imports)
-  (local-set-key (kbd "C-c i") 'go-goto-imports))
+  (local-set-key (kbd "C-c i") 'go-goto-imports)
+  (local-set-key (kbd "C-c d") 'godoc)
+  (local-set-key (kbd "C-c a") 'go-import-add))
 
 (when (or (utils/go-is-sys) (utils/go-is-usr))
   (utils/go-load)
