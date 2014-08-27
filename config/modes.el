@@ -124,3 +124,12 @@
 
 (setq uniquify-buffer-name-style 'post-forward)
 (setq uniquify-strip-common-suffix t)
+
+
+;; -----------------------------------------------------------------------------
+;; json
+;; -----------------------------------------------------------------------------
+
+(require 'json-reformat)
+(require 'json-snatcher)
+(require 'json-mode)
