@@ -5,7 +5,7 @@
 # --
 // Copyright (c) 2014 Datacratic. All rights reserved.
 
-package ${1:package}
+package `(utils/go-package-name)`
 
 import (
 	"fmt"

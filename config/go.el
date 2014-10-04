@@ -19,6 +19,11 @@
   (if (utils/go-is-sys) (utils/go-load-path utils/go-sys-path)
     (when (utils/go-is-usr) (utils/go-load-path utils/go-usr-path))))
 
+(defun utils/go-package-name ()
+  (let* ((dir (file-name-directory (buffer-file-name)))
+         (name (file-name-nondirectory (directory-file-name dir))))
+    (replace-regexp-in-string "^go" "" name)))
+
 
 (defun utils/go-mode-hook ()
   (setq tab-width 4)
