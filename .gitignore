@@ -2,7 +2,8 @@
 *.elc
 *-compile-script
 *-make-script
-config/local.el
-config/project.el
+autoconf
 elpa
 tramp
+config/local.el
+config/project.el
