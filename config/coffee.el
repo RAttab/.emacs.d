@@ -11,8 +11,7 @@
 ;; Load and associate the mode
 ;; -----------------------------------------------------------------------------
 
-(utils/add-vendor-path "defunkt-coffee-mode")
-(require 'coffee-mode)
+(utils/require-package 'coffee-mode)
 
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile" . coffee-mode))

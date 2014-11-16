@@ -1,14 +1,11 @@
 ;; Org mode
 
-
 ;; -----------------------------------------------------------------------------
 ;; Load & associate mode
 ;; -----------------------------------------------------------------------------
 
-;; Load my org-mode version & associate with files
-(utils/add-vendor-path "org/lisp")
-(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 (require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
 
 ;; -----------------------------------------------------------------------------
@@ -56,10 +53,10 @@
 ;; -----------------------------------------------------------------------------
 
 (setq org-tag-alist '(("task" . ?t)
-		      ("bug" . ?b)
-		      ("question" . ?q)
-		      ("note" . ?n)
-		      ("event" . ?e)))
+                      ("bug" . ?b)
+                      ("question" . ?q)
+                      ("note" . ?n)
+                      ("event" . ?e)))
 
 
 ;; -----------------------------------------------------------------------------
@@ -70,8 +67,8 @@
       (quote ((sequence "TODO(t!)" "ONGOING(o!)" "DONE(d!)"))))
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "red" :weight bold)
-	      ("ONGOING" :foreground "green" :weight bold)
-	      ("DONE" :foreground "blue" :weight bold))))
+              ("ONGOING" :foreground "green" :weight bold)
+              ("DONE" :foreground "blue" :weight bold))))
 
 
 ;; -----------------------------------------------------------------------------
@@ -83,16 +80,16 @@
 
 (setq org-capture-templates
       '(("t" "Task" entry (file+headline "~/org/refile.org" "Refile")
-	 "* TODO %? :task:\n  - State \"TODO\"       from \"\"           %T\n\n  %i\n")
+         "* TODO %? :task:\n  - State \"TODO\"       from \"\"           %T\n\n  %i\n")
 
-	("b" "Bug" entry (file+headline "~/org/refile.org" "Refile")
-	 "* TODO %? :bug:\n  - State \"TODO\"       from \"\"           %T\n  - FROM: %a\n\n  %i\n")
+        ("b" "Bug" entry (file+headline "~/org/refile.org" "Refile")
+         "* TODO %? :bug:\n  - State \"TODO\"       from \"\"           %T\n  - FROM: %a\n\n  %i\n")
 
-	("q" "Question" entry (file+headline "~/org/refile.org" "Refile")
-	 "* ONGOING %? :question:\n  - State \"ONGOING\"    from \"\"           %T\n  - FROM: %a\n\n  %i\n")
+        ("q" "Question" entry (file+headline "~/org/refile.org" "Refile")
+         "* ONGOING %? :question:\n  - State \"ONGOING\"    from \"\"           %T\n  - FROM: %a\n\n  %i\n")
 
         ("e" "Event" entry (file+headline "~/org/refile.org" "Refile")
-	 "* DONE %? :event:\n  - State \"DONE\"    from \"\"           %T\n\n  %i\n")
+         "* DONE %? :event:\n  - State \"DONE\"    from \"\"           %T\n\n  %i\n")
 
-	("n" "Note" entry (file+headline "~/org/refile.org" "Refile")
-	 "* %? :note:\n")))
+        ("n" "Note" entry (file+headline "~/org/refile.org" "Refile")
+         "* %? :note:\n")))

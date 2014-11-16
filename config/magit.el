@@ -2,11 +2,10 @@
 ;;
 ;; Could use config for auto-fill mode at 70 col in commit editor.
 
-(utils/add-vendor-path "magit")
-(require 'magit)
-(require 'magit-svn)
+(utils/require-package 'magit)
+(utils/require-package 'magit-find-file)
+(utils/require-package 'magit-svn)
 (require 'magit-blame)
-(require 'magit-find-file)
 
 ;; -----------------------------------------------------------------------------
 ;; key bindings

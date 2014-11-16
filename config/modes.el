@@ -2,9 +2,6 @@
 ;;
 ;; Contains mode configs too short to be placed in it's own file.
 
-(utils/add-vendor-path "misc")
-
-
 ;; -----------------------------------------------------------------------------
 ;; Dired-mode
 ;; -----------------------------------------------------------------------------
@@ -38,7 +35,7 @@
 ;; iedit
 ;; -----------------------------------------------------------------------------
 
-(require 'iedit)
+(utils/require-package 'iedit)
 (define-key global-map (kbd "C-;") 'iedit-mode)
 (define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
 
@@ -47,7 +44,7 @@
 ;; cmake-mode
 ;; -----------------------------------------------------------------------------
 
-(require 'cmake-mode)
+(utils/require-package 'cmake-mode)
 (add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
 
@@ -67,7 +64,7 @@
 ;; markdown-mode
 ;; -----------------------------------------------------------------------------
 
-(autoload 'markdown-mode "markdown-mode" "Major mode for editing Markdown files" t)
+(utils/require-package 'markdown-mode)
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 (defun my-markdown-hook ()
   (setq fill-column 80)
@@ -105,7 +102,7 @@
 ;; iasm-mode
 ;; -----------------------------------------------------------------------------
 
-(require 'iasm-mode)
+(utils/require-package 'iasm-mode)
 
 (global-set-key (kbd "C-c C-d") 'iasm-disasm)
 (global-set-key (kbd "C-c C-l") 'iasm-ldd)
@@ -130,6 +127,26 @@
 ;; json
 ;; -----------------------------------------------------------------------------
 
-(require 'json-reformat)
-(require 'json-snatcher)
-(require 'json-mode)
+(utils/require-package 'json-reformat)
+(utils/require-package 'json-snatcher)
+(utils/require-package 'json-mode)
+
+;; -----------------------------------------------------------------------------
+;; yasnipet
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'yasnippet)
+
+(yas/global-mode 1)
+(setq yas/prompt-functions '(yas/ido-prompt))
+(setq yas/root-directory '("~/.emacs.d/snippets"))
+(mapc 'yas/load-directory yas/root-directory)
+
+;; -----------------------------------------------------------------------------
+;; python
+;; -----------------------------------------------------------------------------
+
+(defun my-python-hook ()
+  (define-key python-mode-map "\C-m" 'newline-and-indent))
+
+(add-hook 'python-mode-hook 'my-python-hook)

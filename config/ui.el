@@ -7,12 +7,17 @@
 ;; color-theme
 ;; -----------------------------------------------------------------------------
 
-;; Only defined in emacs 24 so shim it in for now.
-(defvar custom-theme-load-path nil)
+(utils/require-package 'color-theme)
+(utils/require-package 'sublime-themes)
 
-(utils/add-vendor-path "color-theme")
-(utils/add-vendor-path "themes")
-(require 'color-theme)
+(if (< emacs-major-version 24)
+  (defvar custom-theme-load-path nil))
+
+(setq custom-safe-themes
+      '("7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" ;brin
+        "a233249cc6f90098e13e555f5f5bf6f8461563a8043c7502fb0474be02affeea" ;junio
+        default))
+
 (if (eq window-system 'x) (load-theme 'brin) (load-theme 'junio))
 
 

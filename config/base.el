@@ -12,10 +12,6 @@
 
 (load "~/.emacs.d/config/utils.el")
 
-;; Determines whether we want to load cedet or not.
-;; Should be changed in the local.el file.
-(setq utils/enable-cedet t)
-
 ;; Disable annoying training wheel warning.
 (put 'narrow-to-region 'disabled nil)
 
@@ -84,6 +80,23 @@
 (global-set-key (kbd "M-Q") 'unfill-paragraph)
 
 ;; -----------------------------------------------------------------------------
+;; Packages
+;; -----------------------------------------------------------------------------
+
+(if (< emacs-major-version 24)
+    (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor/")))
+
+(require 'package)
+
+(if (< emacs-major-version 24)
+    (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
+
+(package-initialize)
+
+
+;; -----------------------------------------------------------------------------
 ;; Load rest of configs
 ;; -----------------------------------------------------------------------------
 
@@ -95,7 +108,6 @@
 (utils/load-config "org.el") ;; Has tons of global keys so make sure it goes first.
 (utils/load-config "modes.el")
 (utils/load-config "ido.el")
-(utils/load-config "yasnippet.el")
 (utils/load-config "magit.el")
 (utils/load-config "term.el")
 
@@ -107,7 +119,4 @@
 ;; Other languages
 (utils/load-config "elisp.el")
 (utils/load-config "coffee.el")
-(utils/load-config "python.el")
 (utils/load-config "go.el")
-(utils/load-config "lua.el")
-(utils/load-config "octave.el")

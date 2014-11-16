@@ -10,8 +10,7 @@
 ;; Par Edit
 ;; -----------------------------------------------------------------------------
 
-(autoload 'enable-paredit-mode
-  "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+(utils/require-package 'paredit)
 
 (defun utils/elisp-mode-hook ()
   (whitespace-mode t)

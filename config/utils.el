@@ -8,8 +8,11 @@
 ;; Elisp load
 ;; -----------------------------------------------------------------------------
 
+(defun utils/require-package (package)
+  (when (not (require package nil t)) 
+    (package-install package)))
+
 (setq utils/base-path "~/.emacs.d/")
-(setq utils/vendor-path (concat utils/base-path "vendor/"))
 (setq utils/config-path (concat utils/base-path "config/"))
 
 (defun load-if-exists (file)
@@ -24,13 +27,6 @@
   "Loads a config file from ~/.emacs.d/config"
   (load-if-exists (concat utils/config-path file)))
 
-(defun utils/load-vendor (file)
-  "Loads a config file from ~/.emacs.d/vendor"
-  (load-file (concat utils/vendor-path file)))
-
-(defun utils/add-vendor-path (path)
-  "Adds a vendor path to the load path ~/.emacs.d/vendor"
-  (add-to-list 'load-path (expand-file-name (concat utils/vendor-path path))))
 
 ;; -----------------------------------------------------------------------------
 ;; Join Line
