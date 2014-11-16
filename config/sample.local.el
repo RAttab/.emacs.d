@@ -30,6 +30,3 @@
 ;; Disables warnings about overflowing the undo buffer.
 ;; warning-suppress-types seems to be a recent addition.
 (add-to-list 'warning-suppress-types '(undo discard-info))
-
-;; Uncomment to not load cedet.
-;; (setq utils/enable-cedet nil)

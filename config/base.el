@@ -108,8 +108,8 @@
 
 ;; C/C++
 (utils/load-config "style.el")
-(if utils/enable-cedet (utils/load-config "cedet.el"))
-(if utils/enable-cedet (utils/load-config-if-exists "project.el"))
+(utils/load-config "cedet.el")
+(utils/load-config-if-exists "project.el")
 
 ;; Other languages
 (utils/load-config "elisp.el")

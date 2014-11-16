@@ -11,7 +11,8 @@
 (defun utils/require-package (package)
   (when (not (require package nil t)) 
     (when (not package-archive-contents) (package-refresh-contents))
-    (package-install package)))
+    (package-install package)
+    (require package)))
 
 (setq utils/base-path "~/.emacs.d/")
 (setq utils/config-path (concat utils/base-path "config/"))
