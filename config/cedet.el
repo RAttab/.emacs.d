@@ -5,8 +5,6 @@
 ;; Load CEDET itself
 ;; -----------------------------------------------------------------------------
 
-(utils/load-vendor "cedet/common/cedet.el")
-
 (require 'semantic-gcc)
 (require 'semantic-ia)
 (require 'semantic-decorate-include)
