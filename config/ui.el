@@ -10,9 +10,6 @@
 (utils/require-package 'color-theme)
 (utils/require-package 'sublime-themes)
 
-(if (< emacs-major-version 24)
-  (defvar custom-theme-load-path nil))
-
 (setq custom-safe-themes
       '("7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" ;brin
         "a233249cc6f90098e13e555f5f5bf6f8461563a8043c7502fb0474be02affeea" ;junio

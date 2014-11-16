@@ -10,6 +10,7 @@
 
 (defun utils/require-package (package)
   (when (not (require package nil t)) 
+    (when (not package-archive-contents) (package-refresh-contents))
     (package-install package)))
 
 (setq utils/base-path "~/.emacs.d/")
