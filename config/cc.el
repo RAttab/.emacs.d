@@ -1,5 +1,3 @@
-;; C/C++ Style definition.
-
 ;; -----------------------------------------------------------------------------
 ;; My general style
 ;; -----------------------------------------------------------------------------
@@ -47,10 +45,6 @@
   (setq show-trailing-whitespace nil)
   (setq fill-column 80)
 
-  ;; Sadly it's incredibly buggy. Just use M-q instead.
-  ;; (utils/enable-auto-fill 80 1)
-
-                                        ; 4 space indent
   (setq indent-tabs-mode nil)
   (setq c-indent-level 4)
   (setq c-basic-offset 4)
@@ -95,6 +89,9 @@
 ;; -----------------------------------------------------------------------------
 
 (defun utils/c-hook ()
+  (local-set-key (kbd "C-c C-n") 'utils/join-line-down)
+  (local-set-key (kbd "C-c C-p") 'delete-indentation)
+
   (let ((filename (buffer-file-name)))
     ;; Enable kernel mode for the appropriate files
     (if (and filename (string-match (expand-file-name "~/code/linux") filename))

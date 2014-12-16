@@ -131,6 +131,8 @@
 (utils/require-package 'json-snatcher)
 (utils/require-package 'json-mode)
 
+(add-to-list 'auto-mode-alist '("\\.json$" . json-mode))
+
 ;; -----------------------------------------------------------------------------
 ;; yasnipet
 ;; -----------------------------------------------------------------------------

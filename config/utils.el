@@ -81,9 +81,9 @@
   (dolist (buf (buffer-list))
     (with-current-buffer buf
       (when (and (buffer-file-name) (not (buffer-modified-p)))
-	(if (file-exists-p buffer-file-name)
-	    (revert-buffer t t t)
-	  (message (concat "File no longer exists: " buffer-file-name))))))
+        (if (file-exists-p buffer-file-name)
+            (revert-buffer t t t)
+          (message (concat "File no longer exists: " buffer-file-name))))))
   (message "Refreshed open files."))
 
 
@@ -101,12 +101,12 @@
   "Replace all the OLD chars to the NEW char in the STR string."
   (let ((index (string-match (make-string 1 old) str)))
     (if index
-	(let ()
-	  (aset str index new)
-	  (utils/replace-char str old new))
+        (let ()
+          (aset str index new)
+          (utils/replace-char str old new))
       str)))
 
 (defun utils/make-backup-filename (file)
   "Turns a path into a unique filename usable for backups."
   (concat "~/.emacs_backups/"
-	  (utils/replace-char (expand-file-name file) ?/ ?!)))
+          (utils/replace-char (expand-file-name file) ?/ ?!)))

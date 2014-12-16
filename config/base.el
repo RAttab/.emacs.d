@@ -105,11 +105,7 @@
 (utils/load-config "ido.el")
 (utils/load-config "magit.el")
 (utils/load-config "term.el")
-
-;; C/C++
-(utils/load-config "style.el")
-;; (utils/load-config "cedet.el")
-;; (utils/load-config-if-exists "project.el")
+(utils/load-config "cc.el")
 
 ;; Other languages
 (utils/load-config "elisp.el")
