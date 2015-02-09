@@ -30,5 +30,7 @@
 ;; -----------------------------------------------------------------------------
 
 (defun my-coffee-hook ()
-  (local-set-key (kbd "C-c c") 'coffee-compile-buffer))
+  (local-set-key (kbd "C-c c") 'coffee-compile-buffer)
+  (local-set-key (kbd "C-c <") 'coffee-indent-shift-left)
+  (local-set-key (kbd "C-c >") 'coffee-indent-shift-right))
 (add-hook 'coffee-mode-hook 'my-coffee-hook)
