@@ -6,8 +6,6 @@
 /* `(file-name-nondirectory (buffer-file-name))`
    Rémi Attab (remi.attab@gmail.com), `(format-time-string "%d %b %Y")`
    FreeBSD-style copyright and disclaimer apply
-
-   ${1:Description}
 */
 
 #include "`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.h"

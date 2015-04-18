@@ -1,8 +1,6 @@
-# name: namespace ...
+# name: namespace
 # key: ns
 # --
 namespace ${1:ns }{
-
 $0
-
-} // namespace ${1:$(if (string= "" text) "anonymous" text)}
+} // namespace ${1:$(if (string= "" yas-text) "anonymous" yas-text)}
