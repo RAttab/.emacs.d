@@ -8,7 +8,10 @@
 ;; -----------------------------------------------------------------------------
 
 (utils/require-package 'color-theme)
-(utils/require-package 'sublime-themes)
+
+;; newest version of sublime theme is broken so we keep the older version around.
+(add-to-list 'load-path "~/.emacs.d/vendor/sublime-themes")
+(require 'sublim-themes)
 
 (setq custom-safe-themes
       '("7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" ;brin
