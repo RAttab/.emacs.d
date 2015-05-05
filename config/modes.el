@@ -149,6 +149,7 @@
 ;; -----------------------------------------------------------------------------
 
 (defun my-python-hook ()
-  (define-key python-mode-map "\C-m" 'newline-and-indent))
+  (local-set-key (kbd "C-m") 'newline-and-indent)
+  (local-set-key (kbd "C-c C-c") 'comment-region))
 
 (add-hook 'python-mode-hook 'my-python-hook)
