@@ -153,3 +153,11 @@
   (local-set-key (kbd "C-c C-c") 'comment-region))
 
 (add-hook 'python-mode-hook 'my-python-hook)
+
+;; -----------------------------------------------------------------------------
+;; rust
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'rust-mode)
+
+(setq auto-mode-alist (append '(("\\.rs$" . rust-mode)) auto-mode-alist))
