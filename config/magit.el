@@ -5,6 +5,7 @@
 (utils/require-package 'magit)
 (utils/require-package 'magit-find-file)
 (utils/require-package 'magit-svn)
+(utils/require-package 'ido-completing-read+)
 (require 'magit-blame)
 
 ;; -----------------------------------------------------------------------------
