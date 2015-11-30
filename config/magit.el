@@ -16,8 +16,8 @@
 (setq magit-completing-read-function 'magit-ido-completing-read)
 
 (global-set-key (kbd "C-c s") 'magit-status)
-(global-set-key (kbd "C-c l") 'magit-file-log)
-(global-set-key (kbd "C-c b") 'magit-blame-mode)
+(global-set-key (kbd "C-c l") 'magit-log-buffer-file)
+(global-set-key (kbd "C-c b") 'magit-blame)
 (global-set-key (kbd "C-x f") 'magit-find-file-completing-read)
 
 (add-hook 'magit-log-mode-hook

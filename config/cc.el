@@ -102,7 +102,10 @@
   (let ((filename (buffer-file-name)))
     ;; Enable kernel mode for the appropriate files
     (if (and filename (string-match (expand-file-name "~/code/linux") filename))
-        (utils/c-linux-load) (utils/c-general-load))))
+        (utils/c-linux-load)
+      (if (and filename (string-match (expand-file-name "~/code/adgear") filename))
+          (utils/c-linux-load)
+        (utils/c-general-load)))))
 
 (add-hook 'c-mode-hook 'utils/c-hook)
 (add-hook 'c++-mode-hook 'utils/c-hook)
