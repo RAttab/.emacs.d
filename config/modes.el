@@ -161,3 +161,10 @@
 (utils/require-package 'rust-mode)
 
 (setq auto-mode-alist (append '(("\\.rs$" . rust-mode)) auto-mode-alist))
+
+;; -----------------------------------------------------------------------------
+;; erlang
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'erlang)
+(require 'erlang-start)
