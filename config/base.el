@@ -51,6 +51,7 @@
 (global-set-key (kbd "M-s r") 'replace-string)
 (global-set-key (kbd "M-s e") 'replace-regexp)
 (global-set-key (kbd "M-s s") 'search-forward-regexp)
+(global-set-key (kbd "M-s w") 'rgrep)
 (global-set-key (kbd "C-c C-c") 'comment-region)
 (global-set-key (kbd "<f5>") 'utils/revert-buffer-no-confirm)
 (global-set-key (kbd "C-c t") 'toggle-truncate-lines)
