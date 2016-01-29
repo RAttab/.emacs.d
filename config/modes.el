@@ -168,3 +168,10 @@
 
 (utils/require-package 'erlang)
 (require 'erlang-start)
+
+(defun utils/erlang-hook ()
+  (whitespace-mode t)
+  (setq show-trailing-whitespace t)
+  (setq whitespace-line-column 160)
+  (setq indent-tabs-mode nil))
+(add-hook 'erlang-mode-hook 'utils/erlang-hook)
