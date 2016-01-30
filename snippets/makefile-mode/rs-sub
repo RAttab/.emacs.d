@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: submake target
-# key: rs-sub
-# expand-env: ((yas/indent-line 'fixed))
-# --
-$(eval $(call include_sub_make,${1:makefile_name},${2:folder},$1.mk))
-$0
