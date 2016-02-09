@@ -175,3 +175,4 @@
   (setq whitespace-line-column 160)
   (setq indent-tabs-mode nil))
 (add-hook 'erlang-mode-hook 'utils/erlang-hook)
+(setq auto-mode-alist (append '(("rebar\\.config$" . erlang-mode)) auto-mode-alist))
