@@ -90,6 +90,8 @@
 ;; Renders color codes in shell.
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
+(add-to-list 'auto-mode-alist '("\\.ebuild$" . shell-script-mode))
+
 
 ;; -----------------------------------------------------------------------------
 ;; ispell
