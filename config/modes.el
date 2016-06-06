@@ -185,3 +185,10 @@
   (setq indent-tabs-mode nil))
 (add-hook 'erlang-mode-hook 'utils/erlang-hook)
 (setq auto-mode-alist (append '(("rebar\\.config$" . erlang-mode)) auto-mode-alist))
+
+;; -----------------------------------------------------------------------------
+;; yaml
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'yaml-mode)
+(setq auto-mode-alist (append '(("\\.sls$" . yaml-mode)) auto-mode-alist))
