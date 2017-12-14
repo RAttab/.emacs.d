@@ -98,6 +98,12 @@
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
 (add-to-list 'auto-mode-alist '("\\.ebuild$" . shell-script-mode))
+(defun my-shell-script-hook ()
+  (whitespace-mode t)
+  (setq ident-tabs-mode nil)
+  (setq sh-basic-offset 4)
+  (setq sh-indentation 4))
+(add-hook 'sh-mode-hook 'my-shell-script-hook)
 
 
 ;; -----------------------------------------------------------------------------
