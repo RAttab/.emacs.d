@@ -192,3 +192,9 @@
 
 (utils/require-package 'yaml-mode)
 (setq auto-mode-alist (append '(("\\.sls$" . yaml-mode)) auto-mode-alist))
+
+;; -----------------------------------------------------------------------------
+;; docker
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'dockerfile-mode)
