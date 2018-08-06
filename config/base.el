@@ -85,10 +85,14 @@
 ;; -----------------------------------------------------------------------------
 
 (require 'package)
-
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-
+(setq package-archives
+      '(("gnu"          . "http://elpa.gnu.org/packages/")
+	("melpa-stable" . "https://stable.melpa.org/packages/")
+	("melpa"        . "https://melpa.org/packages/"))
+      package-archive-priorities
+      '(("melpa-stable" . 10)
+	("gnu"          . 5)
+	("melpa"        . 0)))
 (package-initialize)
 
 
