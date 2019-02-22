@@ -219,3 +219,9 @@
 (utils/require-package 'protobuf-mode)
 (setq auto-mode-alist (append '(("\\.proto$" . protobuf-mode)) auto-mode-alist))
 
+;; -----------------------------------------------------------------------------
+;; lilypond
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'lilypond-mode)
+(setq auto-mode-alist (append '(("\\.ly$" . LilyPond-mode)) auto-mode-alist))
