@@ -211,3 +211,11 @@
 
 (utils/require-package 'scala-mode)
 (setq auto-mode-alist (append '(("\\.scala$" . scala-mode)) auto-mode-alist))
+
+;; -----------------------------------------------------------------------------
+;; protobuf
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'protobuf-mode)
+(setq auto-mode-alist (append '(("\\.proto$" . protobuf-mode)) auto-mode-alist))
+
