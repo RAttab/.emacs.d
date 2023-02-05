@@ -72,7 +72,7 @@
 
 (defun find-source-file-recursive (dir)
   "Recursively opens all the source files in a directory."
-  (interactive "fDirectory: ")
+  (interactive "fBase directory: ")
 
   (dolist (file (directory-files dir))
     (let ((path (expand-file-name file dir)))
