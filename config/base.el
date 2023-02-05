@@ -33,20 +33,6 @@
 (add-hook 'makefile-mode-hook 'utils/set-paragraph-keys)
 (add-hook 'Info-mode-hook 'utils/set-paragraph-keys)
 
-;; Training wheels are OFF
-(global-unset-key (kbd "<up>"))
-(global-unset-key (kbd "<C-up>"))
-(global-unset-key (kbd "<M-up>"))
-(global-unset-key (kbd "<down>"))
-(global-unset-key (kbd "<C-down>"))
-(global-unset-key (kbd "<M-down>"))
-(global-unset-key (kbd "<left>"))
-(global-unset-key (kbd "<C-left>"))
-(global-unset-key (kbd "<M-left>"))
-(global-unset-key (kbd "<right>"))
-(global-unset-key (kbd "<C-right>"))
-(global-unset-key (kbd "<M-right>"))
-
 ;; Useful shortcuts
 (global-set-key (kbd "M-s r") 'replace-string)
 (global-set-key (kbd "M-s e") 'replace-regexp)
@@ -71,6 +57,9 @@
 
 (global-set-key (kbd "C-c h") 'ff-find-other-file)
 
+;; -----------------------------------------------------------------------------
+;; utils
+;; -----------------------------------------------------------------------------
 
 (defun unfill-paragraph ()
   "Takes a multi-line paragraph and makes it into a single line of text."
@@ -80,6 +69,22 @@
 
 (global-set-key (kbd "M-Q") 'unfill-paragraph)
 
+
+(defun find-source-file-recursive (dir)
+  "Recursively opens all the source files in a directory."
+  (interactive "fDirectory: ")
+
+  (dolist (file (directory-files dir))
+    (let ((path (expand-file-name file dir)))
+      (if (file-directory-p path)
+          (unless (string-match-p "^\\." file)
+            (find-source-file-recursive path))
+        (when (string-match-p "\\.\\(c\\|h\\|cpp\\|hpp\\|lisp\\|lm\\)$" file)
+          (find-file path))))))
+
+(global-set-key (kbd "C-x r") 'find-source-file-recursive)
+
+
 ;; -----------------------------------------------------------------------------
 ;; Packages
 ;; -----------------------------------------------------------------------------
@@ -87,12 +92,12 @@
 (require 'package)
 (setq package-archives
       '(("gnu"          . "http://elpa.gnu.org/packages/")
-	("melpa-stable" . "https://stable.melpa.org/packages/")
-	("melpa"        . "https://melpa.org/packages/"))
+        ("melpa-stable" . "https://stable.melpa.org/packages/")
+        ("melpa"        . "https://melpa.org/packages/"))
       package-archive-priorities
       '(("melpa-stable" . 10)
-	("gnu"          . 5)
-	("melpa"        . 0)))
+        ("gnu"          . 5)
+        ("melpa"        . 0)))
 (package-initialize)
 
 
