@@ -178,21 +178,6 @@
 (setq auto-mode-alist (append '(("\\.rs$" . rust-mode)) auto-mode-alist))
 
 ;; -----------------------------------------------------------------------------
-;; erlang
-;; -----------------------------------------------------------------------------
-
-(utils/require-package 'erlang)
-(require 'erlang-start)
-
-(defun utils/erlang-hook ()
-  (whitespace-mode t)
-  (setq show-trailing-whitespace t)
-  (setq whitespace-line-column 160)
-  (setq indent-tabs-mode nil))
-(add-hook 'erlang-mode-hook 'utils/erlang-hook)
-(setq auto-mode-alist (append '(("rebar\\.config$" . erlang-mode)) auto-mode-alist))
-
-;; -----------------------------------------------------------------------------
 ;; yaml
 ;; -----------------------------------------------------------------------------
 
@@ -205,19 +190,6 @@
 
 (utils/require-package 'dockerfile-mode)
 
-;; -----------------------------------------------------------------------------
-;; scala
-;; -----------------------------------------------------------------------------
-
-(utils/require-package 'scala-mode)
-(setq auto-mode-alist (append '(("\\.scala$" . scala-mode)) auto-mode-alist))
-
-;; -----------------------------------------------------------------------------
-;; protobuf
-;; -----------------------------------------------------------------------------
-
-(utils/require-package 'protobuf-mode)
-(setq auto-mode-alist (append '(("\\.proto$" . protobuf-mode)) auto-mode-alist))
 
 ;; -----------------------------------------------------------------------------
 ;; lilypond
@@ -225,3 +197,41 @@
 
 (utils/require-package 'lilypond-mode)
 (setq auto-mode-alist (append '(("\\.ly$" . LilyPond-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '(("\\.lyi$" . LilyPond-mode)) auto-mode-alist))
+
+(defun my-lilypond-hook ()
+  (local-set-key (kbd "C-c C-c") 'comment-region))
+(add-hook 'LilyPond-mode-hook 'my-lilypond-hook)
+
+;; -----------------------------------------------------------------------------
+;; graphviz
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'graphviz-dot-mode)
+
+(setq auto-mode-alist (append '(("\\.dot$" . graphviz-dot-mode)) auto-mode-alist))
+
+(defun utils/graphviz-dot-hook ()
+  (whitespace-mode t)
+  (setq show-trailing-whitespace t)
+  (setq whitespace-line-column 160)
+  (setq indent-tabs-mode nil)
+  (setq tab-width 4))
+(add-hook 'graphviz-dot-mode-hook 'utils/graphviz-dot-hook)
+
+
+;; -----------------------------------------------------------------------------
+;; csharp
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'csharp-mode)
+
+(setq auto-mode-alist (append '(("\\.cs$" . csharp-mode)) auto-mode-alist))
+
+
+;; -----------------------------------------------------------------------------
+;; protobuf
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'protobuf-mode)
+(setq auto-mode-alist (append '(("\\.proto$" . protobuf-mode)) auto-mode-alist))
