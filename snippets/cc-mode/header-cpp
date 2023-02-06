@@ -3,13 +3,11 @@
 # key: header
 # expand-env: ((yas/indent-line 'fixed))
 # --
-/* `(file-name-nondirectory (buffer-file-name))`                                 -*- C++ -*-
-   Rémi Attab (remi.attab@gmail.com), `(format-time-string "%d %b %Y")`
-   FreeBSD-style copyright and disclaimer apply
-*/
+/* -*- mode: c++ -*-
+ * Copyright 2022 Haply Robotics Inc. All rights reserved.
+ * Rémi Attab (remi@haply.co), `(format-time-string "%d %b %Y")`
+ */
 
 #include "`(file-name-nondirectory (file-name-sans-extension (buffer-file-name)))`.h"
 
-namespace ${4:ns} {
 $0
-} // namespace $4
