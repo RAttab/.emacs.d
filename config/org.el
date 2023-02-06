@@ -33,6 +33,12 @@
 ;; Syntax highlighting for source block.
 (setq org-src-fontify-natively t)
 
+;; Avoids the annoying non-monospace face for source blocks
+(when (eq system-type 'windows-nt)
+  (custom-set-faces
+   '(org-block ((t (:inherit shadow :extend t))))))
+
+
 ;; -----------------------------------------------------------------------------
 ;; Present
 ;; -----------------------------------------------------------------------------

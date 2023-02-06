@@ -43,6 +43,7 @@
 ;; Disable anoying crap.
 ;; -----------------------------------------------------------------------------
 
+(setq visible-bell 1)
 (setq inhibit-splash-screen t)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
@@ -54,14 +55,6 @@
 ;; Avoids horizontal (top-bottom) splits.
 (setq split-height-threshold nil)
 (setq split-width-treshold most-positive-fixnum)
-
-
-;; -----------------------------------------------------------------------------
-;; Ubuntu copy & paste fix
-;; -----------------------------------------------------------------------------
-
-(setq x-select-enable-clipboard t)
-(setq interprogram-paste-function 'x-cut-buffer-or-selection-value)
 
 
 ;; -----------------------------------------------------------------------------
