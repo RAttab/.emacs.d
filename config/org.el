@@ -4,7 +4,7 @@
 ;; Load & associate mode
 ;; -----------------------------------------------------------------------------
 
-(require 'org-install)
+(require 'org)
 (add-to-list 'auto-mode-alist '("\\.\\(org\\|org_archive\\)$" . org-mode))
 
 (utils/require-package 'org-present)
