@@ -28,6 +28,7 @@
 ;; Avoids accidental quits.
 (setq confirm-kill-emacs 'yes-or-no-p)
 
+(setq interprogram-paste-function 'x-selection-value)
 
 ;; -----------------------------------------------------------------------------
 ;; Useful display modes
@@ -62,7 +63,3 @@
 ;; -----------------------------------------------------------------------------
 
 (setq make-backup-files nil) ; stop creating those backup~ files
-
-;; Failed attempts to keep this feature running in a less anoying manner.
-;; (setq make-backup-file-name-function 'utils/make-backup-filename)
-;; (setq backup-directory-alist '(("*" . "~/.emacs_backup")))

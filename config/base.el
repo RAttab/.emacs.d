@@ -118,6 +118,4 @@
 (utils/load-config "cc.el")
 
 ;; Other languages
-(utils/load-config "elisp.el")
-(utils/load-config "coffee.el")
 (utils/load-config "go.el")
