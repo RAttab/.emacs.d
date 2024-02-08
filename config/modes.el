@@ -39,28 +39,6 @@
 
 
 ;; -----------------------------------------------------------------------------
-;; iedit
-;; -----------------------------------------------------------------------------
-
-(utils/require-package 'iedit)
-(define-key global-map (kbd "C-;") 'iedit-mode)
-(define-key isearch-mode-map (kbd "C-;") 'iedit-mode)
-
-
-;; -----------------------------------------------------------------------------
-;; cmake-mode
-;; -----------------------------------------------------------------------------
-
-(utils/require-package 'cmake-mode)
-(add-to-list 'auto-mode-alist '("CMakeLists.txt" . cmake-mode))
-(add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
-
-(defun my-cmake-hook ()
-  (utils/setup-indent)
-  (setq cmake-tab-width 4))
-(add-hook 'cmake-mode-hook 'my-cmake-hook)
-
-;; -----------------------------------------------------------------------------
 ;; js-mode
 ;; -----------------------------------------------------------------------------
 
@@ -190,18 +168,6 @@
 
 (utils/require-package 'dockerfile-mode)
 
-
-;; -----------------------------------------------------------------------------
-;; lilypond
-;; -----------------------------------------------------------------------------
-
-(utils/require-package 'lilypond-mode)
-(setq auto-mode-alist (append '(("\\.ly$" . LilyPond-mode)) auto-mode-alist))
-(setq auto-mode-alist (append '(("\\.lyi$" . LilyPond-mode)) auto-mode-alist))
-
-(defun my-lilypond-hook ()
-  (local-set-key (kbd "C-c C-c") 'comment-region))
-(add-hook 'LilyPond-mode-hook 'my-lilypond-hook)
 
 ;; -----------------------------------------------------------------------------
 ;; graphviz
