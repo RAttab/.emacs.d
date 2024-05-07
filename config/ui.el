@@ -47,7 +47,7 @@
 ;; Disable anoying crap.
 ;; -----------------------------------------------------------------------------
 
-(setq visible-bell 1)
+(setq visible-bell 'nil)
 (setq inhibit-splash-screen t)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
