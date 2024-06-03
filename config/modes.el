@@ -37,14 +37,6 @@
 (setq whitespace-line-column 80)
 (setq whitespace-style '(face tabs lines-tail))
 
-
-;; -----------------------------------------------------------------------------
-;; js-mode
-;; -----------------------------------------------------------------------------
-
-(setq auto-mode-alist (cons '("\\.json\\'" . js-mode) auto-mode-alist))
-(add-hook 'js-mode-hook 'utils/setup-indent)
-
 ;; -----------------------------------------------------------------------------
 ;; markdown-mode
 ;; -----------------------------------------------------------------------------
@@ -155,12 +147,14 @@
 
 (setq auto-mode-alist (append '(("\\.rs$" . rust-mode)) auto-mode-alist))
 
+
 ;; -----------------------------------------------------------------------------
 ;; yaml
 ;; -----------------------------------------------------------------------------
 
 (utils/require-package 'yaml-mode)
 (setq auto-mode-alist (append '(("\\.sls$" . yaml-mode)) auto-mode-alist))
+
 
 ;; -----------------------------------------------------------------------------
 ;; docker
@@ -184,13 +178,4 @@
   (setq indent-tabs-mode nil)
   (setq tab-width 4))
 (add-hook 'graphviz-dot-mode-hook 'utils/graphviz-dot-hook)
-
-
-;; -----------------------------------------------------------------------------
-;; csharp
-;; -----------------------------------------------------------------------------
-
-(utils/require-package 'csharp-mode)
-
-(setq auto-mode-alist (append '(("\\.cs$" . csharp-mode)) auto-mode-alist))
 
