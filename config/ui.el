@@ -4,21 +4,11 @@
 
 
 ;; -----------------------------------------------------------------------------
-;; color-theme
+;; theme
 ;; -----------------------------------------------------------------------------
 
-(utils/require-package 'color-theme)
-
-;; newest version of sublime theme is broken so we keep the older version around.
-(add-to-list 'load-path "~/.emacs.d/vendor/sublime-themes")
-(require 'sublime-themes)
-
-(setq custom-safe-themes
-      '("7bde52fdac7ac54d00f3d4c559f2f7aa899311655e7eb20ec5491f3b5c533fe8" ;brin
-        "a233249cc6f90098e13e555f5f5bf6f8461563a8043c7502fb0474be02affeea" ;junio
-        default))
-
-(if (eq window-system 'x) (load-theme 'brin) (load-theme 'junio))
+(utils/require-package 'sublime-themes)
+(load-theme 'junio t)
 
 
 ;; -----------------------------------------------------------------------------
@@ -30,6 +20,10 @@
 
 (setq interprogram-paste-function 'x-selection-value)
 
+(defun flash-mode-line ()
+  (invert-face 'mode-line)
+  (run-with-timer 0.1 nil #'invert-face 'mode-line))
+(setq ring-bell-function 'flash-mode-line)
 (setq visible-bell nil)
 
 
