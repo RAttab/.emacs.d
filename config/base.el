@@ -105,6 +105,9 @@
 ;; Load rest of configs
 ;; -----------------------------------------------------------------------------
 
+;; Required to be installed early so magit doesn't explode
+(utils/require-package 'transient)
+
 ;; General stuff
 (utils/load-config "ui.el")
 (utils/load-config-if-exists "local.el")
