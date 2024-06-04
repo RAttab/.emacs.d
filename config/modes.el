@@ -179,3 +179,46 @@
   (setq tab-width 4))
 (add-hook 'graphviz-dot-mode-hook 'utils/graphviz-dot-hook)
 
+
+;; -----------------------------------------------------------------------------
+;; elixir
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'erlang)
+
+(defun utils/erlang-hook ()
+  (setq indent-tabs-mode nil))
+(add-hook 'erlang-mode-hook 'utils/erlang-hook)
+
+(setq auto-mode-alist (append '(("\\.erl$" . erlang-mode)) auto-mode-alist))
+
+
+;; -----------------------------------------------------------------------------
+;; elixir
+;; -----------------------------------------------------------------------------
+
+(unless (package-installed-p 'elixir-mode)
+  (package-install 'elixir-mode))
+
+(defun utils/elixir-hook ()
+  (setq indent-tabs-mode nil))
+(add-hook 'elixir-mode-hook 'utils/elixir-hook)
+
+
+;; -----------------------------------------------------------------------------
+;; terraform
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'terraform-mode)
+(setq auto-mode-alist (append '(("\\.tf$" . terraform-mode)) auto-mode-alist))
+
+
+;; -----------------------------------------------------------------------------
+;; rest
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'jq-mode)
+
+(add-to-list 'load-path "~/.emacs.d/vendor/restclient")
+(require 'restclient)
+(require 'restclient-jq)

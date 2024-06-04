@@ -79,7 +79,7 @@
       (if (file-directory-p path)
           (unless (string-match-p "^\\." file)
             (find-source-file-recursive path))
-        (when (string-match-p "\\.\\(c\\|h\\|cpp\\|hpp\\|lisp\\|lm\\|S\\|sh\\|py\\)$" file)
+        (when (string-match-p "\\.\\(c\\|h\\|cpp\\|hpp\\|lisp\\|lm\\|S\\|sh\\|py\\|py\\|yml\\|yaml\\)$" file)
           (find-file path))))))
 
 (global-set-key (kbd "C-x r") 'find-source-file-recursive)
