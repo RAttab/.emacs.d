@@ -45,7 +45,6 @@
 (setq inhibit-splash-screen t)
 (tool-bar-mode 0)
 (menu-bar-mode 0)
-(scroll-bar-mode -1)
 
 ;; Disable the stupid mouse wheel acceleration
 (setq mouse-wheel-progressive-speed nil)
