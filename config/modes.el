@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; Misc modes config
 ;;
 ;; Contains mode configs too short to be placed in it's own file.
@@ -54,7 +55,6 @@
 ;; -----------------------------------------------------------------------------
 
 (setq gdb-many-windows t)
-(setq gdb-use-seperate-io-buffer nil) ;; meh, need to experiment.
 
 (add-to-list 'auto-mode-alist '("\\.gdb$" . gdb-script-mode))
 (setq gdb-script-basic-indent 4)
@@ -70,9 +70,8 @@
 (add-to-list 'auto-mode-alist '("\\.ebuild$" . shell-script-mode))
 (defun my-shell-script-hook ()
   (whitespace-mode t)
-  (setq ident-tabs-mode nil)
-  (setq sh-basic-offset 4)
-  (setq sh-indentation 4))
+  (setq indent-tabs-mode nil)
+  (setq sh-basic-offset 4))
 (add-hook 'sh-mode-hook 'my-shell-script-hook)
 
 
@@ -124,10 +123,9 @@
 
 (utils/require-package 'yasnippet)
 
-(yas/global-mode 1)
-(setq yas/prompt-functions '(yas/ido-prompt))
-(setq yas/root-directory '("~/.emacs.d/snippets"))
-(mapc 'yas/load-directory yas/root-directory)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(setq yas-prompt-functions '(yas-ido-prompt))
+(yas-global-mode 1)
 
 ;; -----------------------------------------------------------------------------
 ;; python
@@ -218,7 +216,31 @@
 ;; -----------------------------------------------------------------------------
 
 (utils/require-package 'jq-mode)
+(utils/require-package 'restclient)
 
-(add-to-list 'load-path "~/.emacs.d/vendor/restclient")
-(require 'restclient)
-(require 'restclient-jq)
+(add-to-list 'load-path "~/.emacs.d/vendor/restclient" t)
+(unless (require 'restclient-jq nil t)
+  (message "restclient-jq not found: is vendor/ checked out?"))
+
+;; -----------------------------------------------------------------------------
+;; scala
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'scala-mode)
+(setq auto-mode-alist (append '(("\\.scala$" . scala-mode)) auto-mode-alist))
+
+;; -----------------------------------------------------------------------------
+;; javascript
+;; -----------------------------------------------------------------------------
+
+(add-hook 'js-mode-hook (lambda () (setq js-indent-level 2)))
+
+;; -----------------------------------------------------------------------------
+;; sql-mode
+;; -----------------------------------------------------------------------------
+
+(add-hook 'sql-mode-hook
+          (lambda ()
+            (setq sql-indent-offset 4)
+            (setq tab-width 4)
+            (setq indent-tabs-mode nil)))

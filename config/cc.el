@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; -----------------------------------------------------------------------------
 ;; auto-load
 ;; -----------------------------------------------------------------------------
@@ -36,6 +37,7 @@
 
                   (arglist-intro . ++)
                   (arglist-cont-nonempty . ++)
+                  (arglist-close . 0)
                   (template-args-cont . +)
 
                   (brace-list-intro . +)
@@ -45,7 +47,6 @@
                   ))))
 
 (add-hook 'c-mode-common-hook 'utils/c-general-init)
-(add-hook 'c++-mode-common-hook 'utils/c-general-init)
 
 
 (defun utils/c-general-load ()
@@ -113,5 +114,4 @@
 ;; Java hook
 ;; -----------------------------------------------------------------------------
 
-(defun utils/java-hook () (utils/c-general-load))
 (add-hook 'java-mode-hook 'utils/c-general-load)

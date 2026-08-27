@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; General Emacs tweaks
 ;;
 ;; For non-mode specific tweaks.
@@ -18,13 +19,10 @@
 ;; Avoids accidental quits.
 (setq confirm-kill-emacs 'yes-or-no-p)
 
-(setq interprogram-paste-function 'x-selection-value)
-
 (defun flash-mode-line ()
   (invert-face 'mode-line)
   (run-with-timer 0.1 nil #'invert-face 'mode-line))
 (setq ring-bell-function 'flash-mode-line)
-(setq visible-bell nil)
 
 
 ;; -----------------------------------------------------------------------------
@@ -51,7 +49,6 @@
 
 ;; Avoids horizontal (top-bottom) splits.
 (setq split-height-threshold nil)
-(setq split-width-treshold most-positive-fixnum)
 
 
 ;; -----------------------------------------------------------------------------

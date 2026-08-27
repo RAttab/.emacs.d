@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; Org mode
 
 ;; -----------------------------------------------------------------------------
@@ -15,9 +16,7 @@
 ;; -----------------------------------------------------------------------------
 
 (add-hook 'org-mode-hook 'turn-on-font-lock)
-(global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
-(global-set-key (kbd "C-c b") 'org-iswitchb)
 
 ;; Controls where the agenda will look for it's files. A directory means that all
 (setq org-agenda-files '("~/.emacs.d" "~/code" "~/org"))
@@ -33,11 +32,6 @@
 ;; Syntax highlighting for source block.
 (setq org-src-fontify-natively t)
 
-;; Avoids the annoying non-monospace face for source blocks
-(when (eq system-type 'windows-nt)
-  (custom-set-faces
-   '(org-block ((t (:inherit shadow :extend t))))))
-
 
 ;; -----------------------------------------------------------------------------
 ;; Present
@@ -48,13 +42,13 @@
      (add-hook 'org-present-mode-hook
                (lambda ()
                  (org-present-big)
-                 (org-display-inline-images)
+                 (org-link-preview-region)
                  (org-present-hide-cursor)
                  (org-present-read-only)))
      (add-hook 'org-present-mode-quit-hook
                (lambda ()
                  (org-present-small)
-                 (org-remove-inline-images)
+                 (org-link-preview-clear)
                  (org-present-show-cursor)
                  (org-present-read-write)))))
 
@@ -70,8 +64,6 @@
 (setq org-outline-path-complete-in-steps nil)
 ;; Allow refile to create parent tasks with confirmation
 (setq org-refile-allow-creating-parent-nodes (quote confirm))
-;; Use IDO for both buffer and file completion and ido-everywhere to t
-(setq org-completion-use-ido t)
 
 
 ;; -----------------------------------------------------------------------------
@@ -101,7 +93,7 @@
 ;; Capture
 ;; -----------------------------------------------------------------------------
 
-(setq org-deault-notes-file (expand-file-name "~/org/refile.org"))
+(setq org-default-notes-file (expand-file-name "~/org/refile.org"))
 (global-set-key (kbd "C-c c") 'org-capture)
 
 (setq org-capture-templates

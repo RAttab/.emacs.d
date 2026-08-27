@@ -1,9 +1,55 @@
+# -----------------------------------------------------------------------------
+# Build artifacts
+# -----------------------------------------------------------------------------
 *~
+\#*\#
 *.elc
+*.eln
+eln-cache/
 *-compile-script
 *-make-script
 autoconf
-elpa
-tramp
+
+# -----------------------------------------------------------------------------
+# Packages
+# -----------------------------------------------------------------------------
+elpa/
+straight/
+.cache/
+
+# -----------------------------------------------------------------------------
+# Machine-local config (not shared across machines)
+# -----------------------------------------------------------------------------
 config/local.el
 config/project.el
+config/custom.el
+
+# -----------------------------------------------------------------------------
+# Runtime state written by emacs into ~/.emacs.d
+# -----------------------------------------------------------------------------
+auto-save-list/
+backups/
+url/
+transient/
+org-persist/
+request/
+tramp
+ido.last
+projects
+recentf
+places
+bookmarks
+history
+savehist
+session.*
+network-security.data
+ispell-dict
+srecode-map.el
+semanticdb/
+.lsp-session*
+var/
+
+# -----------------------------------------------------------------------------
+# Misc
+# -----------------------------------------------------------------------------
+.DS_Store

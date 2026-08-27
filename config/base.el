@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; -----------------------------------------------------------------------------
 ;; base.el
 ;; Rémi Attab (remi.attab@gmail.com), 01 Jun 2013
@@ -57,15 +58,12 @@
 
 (global-set-key (kbd "C-c h") 'ff-find-other-file)
 
+
+(setq-default indent-tabs-mode nil)
+
 ;; -----------------------------------------------------------------------------
 ;; utils
 ;; -----------------------------------------------------------------------------
-
-(defun unfill-paragraph ()
-  "Takes a multi-line paragraph and makes it into a single line of text."
-  (interactive)
-  (let ((fill-column (point-max)))
-    (fill-paragraph nil)))
 
 (global-set-key (kbd "M-Q") 'unfill-paragraph)
 
@@ -79,7 +77,7 @@
       (if (file-directory-p path)
           (unless (string-match-p "^\\." file)
             (find-source-file-recursive path))
-        (when (string-match-p "\\.\\(c\\|h\\|cpp\\|hpp\\|lisp\\|lm\\|S\\|sh\\|py\\|py\\|yml\\|yaml\\)$" file)
+        (when (string-match-p "\\.\\(c\\|h\\|cpp\\|hpp\\|lisp\\|lm\\|S\\|sh\\|py\\|py\\|yml\\|yaml\\|scala\\|ex\\|exs\\)$" file)
           (find-file path))))))
 
 (global-set-key (kbd "C-x r") 'find-source-file-recursive)

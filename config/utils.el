@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;; Collection of useful functions.
 ;;
 ;; Any functions that are not expected to be used through M-x should
