@@ -244,3 +244,11 @@
             (setq sql-indent-offset 4)
             (setq tab-width 4)
             (setq indent-tabs-mode nil)))
+
+;; -----------------------------------------------------------------------------
+;; zig
+;; -----------------------------------------------------------------------------
+
+(utils/require-package 'zig-mode)
+
+(setq auto-mode-alist (append '(("\\.zig$" . zig-mode)) auto-mode-alist))
