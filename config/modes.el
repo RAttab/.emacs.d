@@ -11,6 +11,9 @@
 (global-set-key (kbd "C-x C-d") 'dired)
 (setq dired-listing-switches "-alh")
 
+(advice-add 'dired-find-file-other-window :around 'utils/reuse-window)
+(advice-add 'dired-display-file :around 'utils/reuse-window)
+
 
 ;; -----------------------------------------------------------------------------
 ;; Compilation
@@ -22,12 +25,31 @@
 (setq compilation-context-lines 10)
 (setq compilation-scroll-output 'first-error)
 
+(advice-add 'compilation-goto-locus :around 'utils/reuse-window)
+
 (ignore-errors
   (require 'ansi-color)
   (defun my-colorize-compilation-buffer ()
     (when (eq major-mode 'compilation-mode)
       (ansi-color-apply-on-region compilation-filter-start (point-max))))
   (add-hook 'compilation-filter-hook 'my-colorize-compilation-buffer))
+
+
+;; -----------------------------------------------------------------------------
+;; Calc
+;; -----------------------------------------------------------------------------
+
+(defun utils/calc-window ()
+  "Create the calc window at the bottom of the largest window."
+  (let ((w (get-largest-window)))
+    (if (> (window-height w) (+ window-min-height calc-window-height 2))
+        (let ((calc-w (split-window
+                       w (- (window-height w) calc-window-height 2) nil)))
+          (set-window-buffer calc-w (current-buffer))
+          (select-window calc-w))
+      (pop-to-buffer (current-buffer)))))
+
+(setq calc-window-hook 'utils/calc-window)
 
 
 ;; -----------------------------------------------------------------------------

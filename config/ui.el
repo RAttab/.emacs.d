@@ -9,7 +9,9 @@
 ;; -----------------------------------------------------------------------------
 
 (utils/require-package 'sublime-themes)
-(load-theme 'junio t)
+
+(let ((warning-inhibit-types '((files missing-lexbind-cookie))))
+  (load-theme 'junio t))
 
 
 ;; -----------------------------------------------------------------------------
@@ -49,6 +51,8 @@
 
 ;; Avoids horizontal (top-bottom) splits.
 (setq split-height-threshold nil)
+
+(setq pop-up-windows nil)
 
 
 ;; -----------------------------------------------------------------------------
